@@ -9,8 +9,8 @@ CXX    = g++
 
 PROG        = $(NAME).exe
 
-DEFAULT_CFLAGS = `sdl-config --cflags`
-LDFLAGS        = `sdl-config --libs` -L. -lmingw32 -lmingwex -lSDL_mixer -lbulletml -mwindows -lstdc++
+DEFAULT_CFLAGS = `sdl2-config --cflags`
+LDFLAGS        = `sdl2-config --libs` -L. -lSDL_mixer -lbulletml -mwindows -lstdc++
 
 MORE_CFLAGS = -O3
 

@@ -9,7 +9,7 @@
  *
  * @version $Revision: 1.8 $
  */
-#include "SDL.h"
+#include <SDL.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
