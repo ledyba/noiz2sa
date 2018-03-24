@@ -1,29 +1,29 @@
 /******************************************************************************
-	¢ŠE÷ -yggdrasil-
-		¢ŠE÷ƒ`ƒ…[ƒgƒŠƒAƒ‹ƒ\[ƒXƒtƒ@ƒCƒ‹
+	ä¸–ç•Œæ¨¹ -yggdrasil-
+		ä¸–ç•Œæ¨¹ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«
 											Coded by Wraith	in July 14, 2002.
 ******************************************************************************/
 
-//@Tab•‚ğ‚S•¶š‚Éİ’è‚µ‚Ä•\¦‚³‚¹‚Ä‚­‚¾‚³‚¢B
+//ã€€Tabå¹…ã‚’ï¼”æ–‡å­—ã«è¨­å®šã—ã¦è¡¨ç¤ºã•ã›ã¦ãã ã•ã„ã€‚
 
 ///////////////////////////////////////////////////////////////////////////////
 //
-//	¡ ygg_test.cpp
+//	â–  ygg_test.cpp
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg_test.cpp
 //
-//	  ŠÖ˜Aƒtƒ@ƒCƒ‹
-//		yggƒ‚ƒWƒ…[ƒ‹‚Ìƒwƒbƒ_ƒtƒ@ƒCƒ‹
+//	â–¡ é–¢é€£ãƒ•ã‚¡ã‚¤ãƒ«
+//		yggãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒ˜ãƒƒãƒ€ãƒ•ã‚¡ã‚¤ãƒ«
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.h
-//		yggƒ‚ƒWƒ…[ƒ‹‚Ì–{‘Ì
+//		yggãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®æœ¬ä½“
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.cpp
-//		‘Sƒtƒ@ƒCƒ‹ƒpƒbƒN
+//		å…¨ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ãƒƒã‚¯
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.lzh
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.zip
 //
-//	  ƒŠƒtƒ@ƒŒƒ“ƒXEƒTƒ|[ƒgƒy[ƒW
+//	â–¡ ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ãƒ»ã‚µãƒãƒ¼ãƒˆãƒšãƒ¼ã‚¸
 //		http://tricklib.com/cxx/ex/yggdrasil/
 //
-//	  ƒ‰ƒCƒZƒ“ƒXî•ñ
+//	â–¡ ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æƒ…å ±
 //		http://tricklib.com/license.htm
 //
 
@@ -39,14 +39,14 @@
 #include <stdio.h>
 #include <malloc.h>
 
-//	VC‘Îô
+//	VCå¯¾ç­–
 #if defined(_MSC_VER)
 #	define std_for  if(0) ; else for
 #else
 #	define std_for  for
 #endif
 
-//	gcc‘Îô(ˆêƒIƒuƒWƒFƒNƒg‚Ì¶•Ó’l‰»)
+//	gccå¯¾ç­–(ä¸€æ™‚ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å·¦è¾ºå€¤åŒ–)
 template<class T> T & vitalize(const T &X) { return (T&)X; }
 
 using namespace yggdrasil;
@@ -55,13 +55,13 @@ using namespace yggdrasil;
 //	SOX path term
 //
 //		term/node		comment		text		attribute	element
-//		node()			›			›			›			›
-//		comment()		›			~			~			~
-//		text()			~			›			~			~
-//		attribute()		~			~			›			~
-//		@*				~			~			›			~
-//		element()		~			~			~			›
-//		*				~			~			~			›
+//		node()			â—‹			â—‹			â—‹			â—‹
+//		comment()		â—‹			Ã—			Ã—			Ã—
+//		text()			Ã—			â—‹			Ã—			Ã—
+//		attribute()		Ã—			Ã—			â—‹			Ã—
+//		@*				Ã—			Ã—			â—‹			Ã—
+//		element()		Ã—			Ã—			Ã—			â—‹
+//		*				Ã—			Ã—			Ã—			â—‹
 //
 
 class error_print: public sax_handler {
@@ -263,7 +263,7 @@ void test_error() {
 			error.get_sequence_case(),
 			error.get_message().c_str());
 	} else {
-		printf("ƒGƒ‰[‚Í‚ ‚è‚Ü‚¹‚ñ‚Å‚µ‚½B\n");
+		printf("ã‚¨ãƒ©ãƒ¼ã¯ã‚ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚\n");
 	}
 }
 
@@ -374,7 +374,7 @@ int main() {
 
 
 /******************************************************************************
-	 ¡ ¡                  Wraith the Trickster                   ¡ ¡
-	¡ ¡  `I'll go with heaven's advantage and fool's wisdom.` ¡ ¡ 
+	â–¡â– â–¡â–                   Wraith the Trickster                  â–¡â– â–¡â– 
+	â– â–¡â– â–¡ ã€œI'll go with heaven's advantage and fool's wisdom.ã€œ â– â–¡â– â–¡
 ******************************************************************************/
 

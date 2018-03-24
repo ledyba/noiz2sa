@@ -1,29 +1,29 @@
 /******************************************************************************
-	¢ŠE÷ -yggdrasil-
-		¢ŠE÷ƒ‚ƒWƒ…[ƒ‹ƒwƒbƒ_ƒtƒ@ƒCƒ‹
+	ä¸–ç•Œæ¨¹ -yggdrasil-
+		ä¸–ç•Œæ¨¹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒ˜ãƒƒãƒ€ãƒ•ã‚¡ã‚¤ãƒ«
 											Coded by Wraith	in July 14, 2002.
 ******************************************************************************/
 
-//@Tab•‚ğ‚S•¶š‚Éİ’è‚µ‚Ä•\¦‚³‚¹‚Ä‚­‚¾‚³‚¢B
+//ã€€Tabå¹…ã‚’ï¼”æ–‡å­—ã«è¨­å®šã—ã¦è¡¨ç¤ºã•ã›ã¦ãã ã•ã„ã€‚
 
 ///////////////////////////////////////////////////////////////////////////////
 //
-//	¡ ygg.h
+//	â–  ygg.h
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.h
 //
-//	  ŠÖ˜Aƒtƒ@ƒCƒ‹
-//		–{ƒ‚ƒWƒ…[ƒ‹‚Ì–{‘Ì
+//	â–¡ é–¢é€£ãƒ•ã‚¡ã‚¤ãƒ«
+//		æœ¬ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®æœ¬ä½“
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.cpp
-//		–{ƒ‚ƒWƒ…[ƒ‹‚Ìƒ`ƒ…[ƒgƒŠƒAƒ‹ƒ\[ƒXƒtƒ@ƒCƒ‹
+//		æœ¬ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg_test.cpp
-//		‘Sƒtƒ@ƒCƒ‹ƒpƒbƒN
+//		å…¨ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ãƒƒã‚¯
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.lzh
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.zip
 //
-//	  ƒŠƒtƒ@ƒŒƒ“ƒXEƒTƒ|[ƒgƒy[ƒW
+//	â–¡ ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ãƒ»ã‚µãƒãƒ¼ãƒˆãƒšãƒ¼ã‚¸
 //		http://tricklib.com/cxx/ex/yggdrasil/
 //
-//	  ƒ‰ƒCƒZƒ“ƒXî•ñ
+//	â–¡ ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æƒ…å ±
 //		http://tricklib.com/license.htm
 //
 
@@ -55,13 +55,13 @@
 #endif
 
 //
-//	™ƒx[ƒXƒGƒ“ƒR[ƒfƒBƒ“ƒOw’èƒ}ƒNƒ
+//	â˜†ãƒ™ãƒ¼ã‚¹ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°æŒ‡å®šãƒã‚¯ãƒ­
 //
 
-//	ƒRƒ“ƒpƒCƒ‹‚Éw’è‚·‚é‚Ì‚ª–Ê“|‚Èê‡‚ÍˆÈ‰º‚ÌƒRƒƒ“ƒgs‚©‚ç“KØ‚Èw’è‚ğ
-//	(ƒRƒƒ“ƒg‚ğ‰ğœ‚µ‚Ä)—LŒø‚É‚µ‚Ä‚­‚¾‚³‚¢B‚¢‚Á‚³‚¢w’è‚ª‚È‚³‚ê‚È‚¢ê‡‚Å
-//	‚à©“®”»•Ê‚³‚ê‚Ü‚·‚ªA³Šm‚É”»’f‚³‚ê‚È‚Á‚©‚½‚è”»•Ê‚Ìˆ×‚É(—]•ª)ƒR[ƒh‚ª
-//	¶¬‚³‚ê‚½‚è‚·‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B
+//	ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ™‚ã«æŒ‡å®šã™ã‚‹ã®ãŒé¢å€’ãªå ´åˆã¯ä»¥ä¸‹ã®ã‚³ãƒ¡ãƒ³ãƒˆè¡Œã‹ã‚‰é©åˆ‡ãªæŒ‡å®šã‚’
+//	(ã‚³ãƒ¡ãƒ³ãƒˆã‚’è§£é™¤ã—ã¦)æœ‰åŠ¹ã«ã—ã¦ãã ã•ã„ã€‚ã„ã£ã•ã„æŒ‡å®šãŒãªã•ã‚Œãªã„å ´åˆã§
+//	ã‚‚è‡ªå‹•åˆ¤åˆ¥ã•ã‚Œã¾ã™ãŒã€æ­£ç¢ºã«åˆ¤æ–­ã•ã‚Œãªã£ã‹ãŸã‚Šåˆ¤åˆ¥ã®ç‚ºã«(ä½™åˆ†)ã‚³ãƒ¼ãƒ‰ãŒ
+//	ç”Ÿæˆã•ã‚ŒãŸã‚Šã™ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚
 //
 //#define __USING_ANSI__
 //#define __USING_SJIS__
@@ -81,17 +81,17 @@
 #endif
 
 /******************************************************************************
-	 ¡ ¡                      TrickPalace                        ¡ ¡
-	¡ ¡               http://www.trickpalace.net/               ¡ ¡ 
+	â–¡â– â–¡â–                       TrickPalace                       â–¡â– â–¡â– 
+	â– â–¡â– â–¡              http://www.trickpalace.net/               â– â–¡â– â–¡
 ******************************************************************************/
 
 //
-//  œyggdrasil
+//  â—yggdrasil
 //
 namespace yggdrasil {
 
 //
-//  ¥g—p‚·‚é•¶š—ñƒNƒ‰ƒX [ Y ]
+//  â–¼ä½¿ç”¨ã™ã‚‹æ–‡å­—åˆ—ã‚¯ãƒ©ã‚¹ [ ã€† ]
 //
 }
 #include <string>
@@ -100,7 +100,7 @@ typedef std::string ygg_string;
 //  typedef std::wstring ygg_wstring;
 
 //
-//  œƒm[ƒhŒ^–¼ [ Y ]
+//  â—ãƒãƒ¼ãƒ‰å‹å [ ã€† ]
 //
 namespace ygg_node_type {
 	const ygg_string empty = "empty";
@@ -114,10 +114,10 @@ namespace ygg_node_type {
 }
 
 //
-//  œƒ^[ƒ€ [ Y ]
+//  â—ã‚¿ãƒ¼ãƒ  [ ã€† ]
 //
 namespace ygg_term {
-	const ygg_string broken_char = "?";		//	‚Q•¶šˆÈã‚Å‚à‰ÂAANSIˆÈŠO‚Í•s‰ÂB
+	const ygg_string broken_char = "?";		//	ï¼’æ–‡å­—ä»¥ä¸Šã§ã‚‚å¯ã€ANSIä»¥å¤–ã¯ä¸å¯ã€‚
 	const ygg_string empty = "";
 	const ygg_string element_lead = "<";
 	const ygg_string element_sign = "/";
@@ -160,11 +160,11 @@ namespace ygg_term {
 
 	const ygg_string yggdrasil_version = "information>\n"
 											"\tmodule>\tid=yggdrasil\n"
-											"\t\tname=¢ŠE÷  -yggdrasil- \n"
+											"\t\tname=ä¸–ç•Œæ¨¹  -yggdrasil- \n"
 											"\t\turl=http://tricklib.com/cxx/ex/yggdrasil/\n"
-											"\t\tversion=ƒx[ƒ^IIII-I\n"
+											"\t\tversion=ãƒ™ãƒ¼ã‚¿IIII-I\n"
 											"\tauthor>\tid=wraith\n"
-											"\t\tname=“¹‰»t_n"
+											"\t\tname=é“åŒ–å¸«ï¼¼n"
 											"\t\turl=http://www.trickpalace.net/\n"
 											"\t\tmail=wraith@trickpalace.net\n";
 }
@@ -172,22 +172,22 @@ namespace ygg_term {
 //	SOX path term
 //
 //		term/node		comment		text		attribute	element
-//		node()			›			›			›			›
-//		comment()		›			~			~			~
-//		text()			~			›			~			~
-//		attribute()		~			~			›			~
-//		@*				~			~			›			~
-//		element()		~			~			~			›
-//		*				~			~			~			›
+//		node()			â—‹			â—‹			â—‹			â—‹
+//		comment()		â—‹			Ã—			Ã—			Ã—
+//		text()			Ã—			â—‹			Ã—			Ã—
+//		attribute()		Ã—			Ã—			â—‹			Ã—
+//		@*				Ã—			Ã—			â—‹			Ã—
+//		element()		Ã—			Ã—			Ã—			â—‹
+//		*				Ã—			Ã—			Ã—			â—‹
 //
 
 /******************************************************************************
-	 ¡ ¡                       cppll ML                          ¡ ¡
-	¡ ¡            http://www.trickpalace.net/cppll/            ¡ ¡ 
+	â–¡â– â–¡â–                        cppll ML                         â–¡â– â–¡â– 
+	â– â–¡â– â–¡           http://www.trickpalace.net/cppll/            â– â–¡â– â–¡
 ******************************************************************************/
 
 //
-//	¤æséŒ¾
+//	â–½å…ˆè¡Œå®£è¨€
 //
 class ygg_node;
 class ygg_node_body;
@@ -290,7 +290,7 @@ class ygg_smart_shell {
 };
 
 //
-//  œutilities
+//  â—utilities
 //
 namespace ygg_utility {
 	ygg_string make_indent(int indent);
@@ -340,7 +340,7 @@ namespace ygg_utility {
 		return utf8;
 #endif
 #ifdef	__USING_UNKNOWN__
-		const int fingerprint = ((unsigned char*)("Š¿š"))[0];
+		const int fingerprint = ((unsigned char*)("æ¼¢å­—"))[0];
 		if (0x8A == fingerprint) {
 			return sjis;
 		}
@@ -356,7 +356,7 @@ namespace ygg_utility {
 }
 
 //
-//	¡yggƒoƒŠƒ…[ƒNƒ‰ƒX
+//	â– yggãƒãƒªãƒ¥ãƒ¼ã‚¯ãƒ©ã‚¹
 //
 class ygg_value {
 	ygg_string value;
@@ -423,12 +423,12 @@ class ygg_value {
 };
 
 /******************************************************************************
-	 ¡ ¡                          cuppa                          ¡ ¡
-	¡ ¡                  http://www.unittest.org/               ¡ ¡ 
+	â–¡â– â–¡â–                           cuppa                         â–¡â– â–¡â– 
+	â– â–¡â– â–¡                 http://www.unittest.org/               â– â–¡â– â–¡
 ******************************************************************************/
 
 //
-//	¡yggƒm[ƒhƒzƒ‹ƒ_
+//	â– yggãƒãƒ¼ãƒ‰ãƒ›ãƒ«ãƒ€
 //
 class ygg_node {
 	friend class ygg_ghost;
@@ -454,8 +454,8 @@ inline 	ygg_node & operator = (const ygg_node &X);
 	}
 
 inline	ygg_node get_parent() const;
-inline	bool is_live() const;	//	©‚±‚¢‚Â‚Í«—ˆ“I‚É‚È‚­‚È‚é‚©‚à‚µ‚ê‚È‚¢‚Ì‚Å
-								//		is_valid()/is_empty() ‚ğg—p‚µ‚Ä‚­‚¾‚³‚¢B
+inline	bool is_live() const;	//	â†ã“ã„ã¤ã¯å°†æ¥çš„ã«ãªããªã‚‹ã‹ã‚‚ã—ã‚Œãªã„ã®ã§
+								//		is_valid()/is_empty() ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚
 inline	ygg_string get_type() const;
 inline	ygg_string get_name() const;
 		ygg_string get_path_name() const {
@@ -529,9 +529,9 @@ inline	ygg_node & sub_node(ygg_node X);
 inline	bool assert_other(const ygg_node &X) const;
 #endif
 
-		ygg_node & vanish(); //  eƒm[ƒh‚©‚ç‚Ì exile ‹y‚ÑAthis(ygg_node)‚Ì‹óƒm[ƒh‰»
+		ygg_node & vanish(); //  è¦ªãƒãƒ¼ãƒ‰ã‹ã‚‰ã® exile åŠã³ã€this(ygg_node)ã®ç©ºãƒãƒ¼ãƒ‰åŒ–
 		ygg_string get_path() const;
-		ygg_node & purge(); //  Œ‹‡‰Â”\‚ÈƒeƒLƒXƒgƒm[ƒh‚ÌŒ‹‡Aœ—ìA‹óƒm[ƒh‚Ì exileA‹óƒŠƒXƒg‚Ì‹óƒm[ƒh‰»
+		ygg_node & purge(); //  çµåˆå¯èƒ½ãªãƒ†ã‚­ã‚¹ãƒˆãƒãƒ¼ãƒ‰ã®çµåˆã€é™¤éœŠã€ç©ºãƒãƒ¼ãƒ‰ã® exileã€ç©ºãƒªã‚¹ãƒˆã®ç©ºãƒãƒ¼ãƒ‰åŒ–
 		ygg_node enum_node(const ygg_string &path_where);
 
 static inline ygg_node parse_sox(const ygg_string &sox, sax_handler *sax = NULL);
@@ -543,7 +543,7 @@ inline	ygg_node & unregist_parent(ygg_root *X);
 };
 
 //
-//	 yggƒm[ƒhƒNƒ‰ƒX
+//	â–¡yggãƒãƒ¼ãƒ‰ã‚¯ãƒ©ã‚¹
 //
 class ygg_node_body :public ygg_smart_base {
 	friend class ygg_node;
@@ -786,7 +786,7 @@ inline ygg_node & ygg_node::unregist_parent(ygg_root *X) {
 }
 
 //
-//	¡yggƒS[ƒXƒgƒNƒ‰ƒX
+//	â– yggã‚´ãƒ¼ã‚¹ãƒˆã‚¯ãƒ©ã‚¹
 //
 class ygg_ghost :public ygg_node_body {
 	ygg_string path;
@@ -834,7 +834,7 @@ static
 };
 
 //
-//	¡yggƒRƒƒ“ƒgƒNƒ‰ƒX
+//	â– yggã‚³ãƒ¡ãƒ³ãƒˆã‚¯ãƒ©ã‚¹
 //
 class ygg_comment :public ygg_node_body {
 
@@ -866,7 +866,7 @@ static
 };
 
 //
-//	¡yggƒeƒLƒXƒgƒNƒ‰ƒX
+//	â– yggãƒ†ã‚­ã‚¹ãƒˆã‚¯ãƒ©ã‚¹
 //
 class ygg_text :public ygg_node_body {
 
@@ -898,7 +898,7 @@ static
 };
 
 //
-//	¡ygg‘®«ƒNƒ‰ƒX
+//	â– yggå±æ€§ã‚¯ãƒ©ã‚¹
 //
 class ygg_attribute :public ygg_node_body {
 
@@ -932,7 +932,7 @@ static
 };
 
 //
-//  ¥g—p‚·‚éƒRƒ“ƒeƒiƒNƒ‰ƒX [ Y ]
+//  â–¼ä½¿ç”¨ã™ã‚‹ã‚³ãƒ³ãƒ†ãƒŠã‚¯ãƒ©ã‚¹ [ ã€† ]
 //
 typedef std::list<ygg_node> ygg_list_type;
 //typedef std::iterator<std::bidirectional_iterator_tag, ygg_node> ygg_iterator_base;
@@ -1203,7 +1203,7 @@ inline bool ygg_reverse_iterator::is_not_rend() const {
 
 
 //
-//	¡yggƒŠƒXƒgƒNƒ‰ƒX
+//	â– yggãƒªã‚¹ãƒˆã‚¯ãƒ©ã‚¹
 //
 class ygg_proto_list :public ygg_node_body {
 	friend class ygg_node_body;
@@ -1325,7 +1325,7 @@ inline ygg_const_reverse_iterator ygg_node::rend() const {
 }
 
 //
-//	¡yggŠî’êƒNƒ‰ƒX
+//	â– yggåŸºåº•ã‚¯ãƒ©ã‚¹
 //
 class ygg_root :public ygg_proto_list {
 	friend class ygg_ghost;
@@ -1365,7 +1365,7 @@ inline ygg_node ygg_node::parse_xml(const ygg_string &xml, sax_handler *sax) {
 }
 
 //
-//	¡ygg—v‘fƒNƒ‰ƒX
+//	â– yggè¦ç´ ã‚¯ãƒ©ã‚¹
 //
 class ygg_element :public ygg_root {
 	ygg_string	name;
@@ -1396,7 +1396,7 @@ static
 };
 inline void ygg_node_body::regist_parent(ygg_root *X) {
 	assert(NULL == parent);
-	//assert(("‚±‚Ìƒm[ƒh‚É‚ÍŠù‚Ée‚ª‚¢‚Ü‚·B‚¢‚Á‚½‚ñ 'eƒm[ƒh.exile_node(‚±‚Ìƒm[ƒh)' ‚Åâ‰‚·‚é‚©A'‚±‚Ìƒm[ƒh.close()' ‚ÅƒNƒ[ƒ“‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢B", NULL == parent));
+	//assert(("ã“ã®ãƒãƒ¼ãƒ‰ã«ã¯æ—¢ã«è¦ªãŒã„ã¾ã™ã€‚ã„ã£ãŸã‚“ 'è¦ªãƒãƒ¼ãƒ‰.exile_node(ã“ã®ãƒãƒ¼ãƒ‰)' ã§çµ¶ç¸ã™ã‚‹ã‹ã€'ã“ã®ãƒãƒ¼ãƒ‰.close()' ã§ã‚¯ãƒ­ãƒ¼ãƒ³ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚", NULL == parent));
 	if (NULL != this && ygg_node_type::empty != get_type()) {
 		parent = X;
 		X->adopt_child(this);
@@ -1410,12 +1410,12 @@ inline void ygg_node_body::unregist_parent(ygg_root *X) {
 }
 
 /******************************************************************************
-	 ¡ ¡                 Trick Library 'dagger'                  ¡ ¡
-	¡ ¡              http://tricklib.com/cxx/dagger/            ¡ ¡ 
+	â–¡â– â–¡â–                  Trick Library 'dagger'                 â–¡â– â–¡â– 
+	â– â–¡â– â–¡             http://tricklib.com/cxx/dagger/            â– â–¡â– â–¡
 ******************************************************************************/
 
 //
-//	¡ygg_position
+//	â– ygg_position
 //
 class ygg_position {
 public:
@@ -1469,7 +1469,7 @@ public:
 };
 
 //
-//	¡ygg_error_term(1/2)
+//	â– ygg_error_term(1/2)
 //
 namespace ygg_error_term {
 	const int genre			= 0x01000000;
@@ -1477,7 +1477,7 @@ namespace ygg_error_term {
 	const int sequence		= 0x00000100;
 	const int sequence_case	= 0x00000001;
 
-	const ygg_string default_message = "‰½‚ç‚©‚ÌƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B";
+	const ygg_string default_message = "ä½•ã‚‰ã‹ã®ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚";
 };
 
 class ygg_error_code {
@@ -1530,7 +1530,7 @@ class ygg_error_code {
 };
 
 //
-//	¡ygg_error_term(2/2)
+//	â– ygg_error_term(2/2)
 //
 namespace ygg_error_term {
 
@@ -1584,7 +1584,7 @@ const ygg_error_code user				= make_genre(0x04);
 
 
 //
-//	¡yggƒGƒ‰[ƒNƒ‰ƒX
+//	â– yggã‚¨ãƒ©ãƒ¼ã‚¯ãƒ©ã‚¹
 //
 class ygg_error :public ygg_error_code, public ygg_position {
 	ygg_string message;
@@ -1616,7 +1616,7 @@ class ygg_error :public ygg_error_code, public ygg_position {
 
 
 //
-//	¡SAXƒnƒ“ƒhƒ‰Šî–{ƒNƒ‰ƒX
+//	â– SAXãƒãƒ³ãƒ‰ãƒ©åŸºæœ¬ã‚¯ãƒ©ã‚¹
 //
 class sax_handler {
 	friend class ygg_parser;
@@ -1628,13 +1628,13 @@ class sax_handler {
   protected:
 	ygg_parser * get_parser();
   public:
-	virtual void on_error(ygg_error* parse_error);	//	parse_error->clear() ‰Â
-	virtual void start_document(ygg_node root);		//	ƒRƒƒ“ƒgƒm[ƒh‚Ì•t‰Á‚Ì‚İ ‰Â
-	virtual void end_document(ygg_node &root);		//	root.vanish() ‚¨‚æ‚ÑA‚»‚Ì‘¼‚Ì‘S‘€ì ‰Â
-	virtual void start_element(ygg_node element);	//	‘®«‚Ì‘S‘€ì ‰Â
-	virtual void end_element(ygg_node element);		//	element.vanish() ‚¨‚æ‚ÑA“¯element“à‚Ì‚»‚Ì‘¼‚Ì‘S‘€ì ‰Â
-	virtual void catch_text(ygg_node text);			//	text.set_value(...) ‰Â
-	virtual void catch_comment(ygg_node comment);	//	comment.set_value(...) ‰Â
+	virtual void on_error(ygg_error* parse_error);	//	parse_error->clear() å¯
+	virtual void start_document(ygg_node root);		//	ã‚³ãƒ¡ãƒ³ãƒˆãƒãƒ¼ãƒ‰ã®ä»˜åŠ ã®ã¿ å¯
+	virtual void end_document(ygg_node &root);		//	root.vanish() ãŠã‚ˆã³ã€ãã®ä»–ã®å…¨æ“ä½œ å¯
+	virtual void start_element(ygg_node element);	//	å±æ€§ã®å…¨æ“ä½œ å¯
+	virtual void end_element(ygg_node element);		//	element.vanish() ãŠã‚ˆã³ã€åŒelementå†…ã®ãã®ä»–ã®å…¨æ“ä½œ å¯
+	virtual void catch_text(ygg_node text);			//	text.set_value(...) å¯
+	virtual void catch_comment(ygg_node comment);	//	comment.set_value(...) å¯
 };
 //
 //
@@ -1649,7 +1649,7 @@ class error_catcher :public sax_handler {
 };
 
 //
-//	 yggƒp[ƒUƒNƒ‰ƒX
+//	â–¡yggãƒ‘ãƒ¼ã‚¶ã‚¯ãƒ©ã‚¹
 //
 class ygg_parser {
   protected:
@@ -1664,10 +1664,10 @@ class ygg_parser {
 
 	const ygg_error_code check_name(const ygg_string &type, const ygg_string &X);
 	const ygg_error_code check_element_name(const ygg_string &X) {
-		return check_name("—v‘f–¼", X);
+		return check_name("è¦ç´ å", X);
 	}
 	const ygg_error_code check_attribute_name(const ygg_string &X) {
-		return check_name("‘®«–¼", X);
+		return check_name("å±æ€§å", X);
 	}
 
   public:
@@ -1694,7 +1694,7 @@ class ygg_parser {
 
 
 //
-//	¡SOXƒp[ƒUƒNƒ‰ƒX
+//	â– SOXãƒ‘ãƒ¼ã‚¶ã‚¯ãƒ©ã‚¹
 //
 class sox_parser :public ygg_parser {
 	ygg_node &root;
@@ -1737,7 +1737,7 @@ inline sox_parser & sox_parser::read(std::istream &stream) {
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 	init_root();
 	if (!stream) {
-		raise_error(ygg_error_term::invalid_stream, "–³Œø‚ÈƒXƒgƒŠ[ƒ€‚ªw’è‚³‚ê‚Ü‚µ‚½B");
+		raise_error(ygg_error_term::invalid_stream, "ç„¡åŠ¹ãªã‚¹ãƒˆãƒªãƒ¼ãƒ ãŒæŒ‡å®šã•ã‚Œã¾ã—ãŸã€‚");
 	} else {
 #if defined(__YGGDRASIL_WITH_BABEL__)
 		using namespace babel;
@@ -1782,7 +1782,7 @@ inline sox_parser & sox_parser::write(std::ostream &stream, int encoding) {
 inline sox_parser & sox_parser::write(std::ostream &stream) {
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 	if (!stream) {
-		raise_error(ygg_error_term::invalid_stream, "–³Œø‚ÈƒXƒgƒŠ[ƒ€‚ªw’è‚³‚ê‚Ü‚µ‚½B");
+		raise_error(ygg_error_term::invalid_stream, "ç„¡åŠ¹ãªã‚¹ãƒˆãƒªãƒ¼ãƒ ãŒæŒ‡å®šã•ã‚Œã¾ã—ãŸã€‚");
 		return *this;												//	return
 	}
 #if defined(__YGGDRASIL_WITH_BABEL__)
@@ -1802,7 +1802,7 @@ inline sox_parser & sox_parser::load(const ygg_string &X_filename) {
 	std::ifstream file(X_filename.c_str());
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 	if (!file) {
-		raise_error(ygg_error_term::cannot_open_file, "ƒtƒ@ƒCƒ‹ " +X_filename +" ‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B");
+		raise_error(ygg_error_term::cannot_open_file, "ãƒ•ã‚¡ã‚¤ãƒ« " +X_filename +" ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚");
 		return *this;												//	return
 	}
 
@@ -1820,7 +1820,7 @@ inline sox_parser & sox_parser::save(const ygg_string &X_filename) {
 	std::ofstream file(X_filename.c_str());
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 	if (!file) {
-		raise_error(ygg_error_term::cannot_open_file, "ƒtƒ@ƒCƒ‹ " +X_filename +" ‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B");
+		raise_error(ygg_error_term::cannot_open_file, "ãƒ•ã‚¡ã‚¤ãƒ« " +X_filename +" ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚");
 		return *this;												//	return
 	}
 #if defined(__YGGDRASIL_WITH_BABEL__)
@@ -1958,7 +1958,7 @@ inline int get_encoding_from_label(const char *label) {
 }
 inline babel::bbl_translater<babel::bbl_binary, ygg_string> get_translater(const ygg_string &header) {
 
-	//	ƒzƒ“ƒg‚È‚ç‚±‚Ì‚Ü‚í‚è‚Ìƒeƒ“ƒvƒŒ[ƒgˆø”‚ÍÈ—ª‚Å‚«‚éƒnƒY‚È‚Ì‚É‚¡(ƒm„DM) ... bcc ‚ÌR(M„DL)ƒm‚Î‚©‚ŸI
+	//	ãƒ›ãƒ³ãƒˆãªã‚‰ã“ã®ã¾ã‚ã‚Šã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆå¼•æ•°ã¯çœç•¥ã§ãã‚‹ãƒã‚ºãªã®ã«ãƒ(ãƒĞ”ï½€) ... bcc ã®ãƒ½(ï½€Ğ”Â´)ãƒã°ã‹ãï¼
 
 	using namespace babel;
 	using namespace babel::base_encoding;
@@ -1982,7 +1982,7 @@ inline babel::bbl_translater<babel::bbl_binary, ygg_string> get_translater(const
 	const ygg_string encoding_label = ygg_root::parse_xml(translater(header))["/?xml/@encoding"].get_value().get_string();
 	const int label_encoding = get_encoding_from_label(encoding_label.c_str());
 
-	//	encoding_label ‚ğ—Dæ
+	//	encoding_label ã‚’å„ªå…ˆ
 	if (unknown != label_encoding && analyze_encoding != label_encoding) {
 		return manual_translate_engine<bbl_binary, ygg_string>::order(label_encoding);
 	} else {
@@ -1992,7 +1992,7 @@ inline babel::bbl_translater<babel::bbl_binary, ygg_string> get_translater(const
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 
 //
-//	¡XMLƒp[ƒUƒNƒ‰ƒX
+//	â– XMLãƒ‘ãƒ¼ã‚¶ã‚¯ãƒ©ã‚¹
 //
 class xml_parser :public ygg_parser {
 	ygg_node &root;
@@ -2022,7 +2022,7 @@ class xml_parser :public ygg_parser {
 inline xml_parser & xml_parser::read(std::istream &stream) {
 	init_root();
 	if (!stream) {
-		raise_error(ygg_error_term::invalid_stream, "–³Œø‚ÈƒXƒgƒŠ[ƒ€‚ªw’è‚³‚ê‚Ü‚µ‚½B");
+		raise_error(ygg_error_term::invalid_stream, "ç„¡åŠ¹ãªã‚¹ãƒˆãƒªãƒ¼ãƒ ãŒæŒ‡å®šã•ã‚Œã¾ã—ãŸã€‚");
 	} else {
 #if defined(__YGGDRASIL_WITH_BABEL__)
 		using namespace babel;
@@ -2063,7 +2063,7 @@ inline xml_parser & xml_parser::write(std::ostream &stream) {
 	using namespace babel;
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 	if (!stream) {
-		raise_error(ygg_error_term::invalid_stream, "–³Œø‚ÈƒXƒgƒŠ[ƒ€‚ªw’è‚³‚ê‚Ü‚µ‚½B");
+		raise_error(ygg_error_term::invalid_stream, "ç„¡åŠ¹ãªã‚¹ãƒˆãƒªãƒ¼ãƒ ãŒæŒ‡å®šã•ã‚Œã¾ã—ãŸã€‚");
 		return *this;
 	}
 #if defined(__YGGDRASIL_WITH_BABEL__)
@@ -2084,7 +2084,7 @@ inline xml_parser & xml_parser::load(const ygg_string &X_filename) {
 	std::ifstream file(X_filename.c_str());
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 	if (!file) {
-		raise_error(ygg_error_term::cannot_open_file, "ƒtƒ@ƒCƒ‹ " +X_filename +" ‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B");
+		raise_error(ygg_error_term::cannot_open_file, "ãƒ•ã‚¡ã‚¤ãƒ« " +X_filename +" ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚");
 		return *this;
 	}
 
@@ -2098,7 +2098,7 @@ inline xml_parser & xml_parser::save(const ygg_string &X_filename) {
 #endif //	defined(__YGGDRASIL_WITH_BABEL__)
 
 	if (!file) {
-		raise_error(ygg_error_term::cannot_open_file, "ƒtƒ@ƒCƒ‹ " +X_filename +" ‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B");
+		raise_error(ygg_error_term::cannot_open_file, "ãƒ•ã‚¡ã‚¤ãƒ« " +X_filename +" ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚");
 		return *this;
 	}
 
@@ -2182,7 +2182,7 @@ inline ygg_node ygg_root::parse_xml(const ygg_string &xml, sax_handler *sax) {
 #endif	//	__YGGDRASIL_YGG_H__
 
 /******************************************************************************
-	 ¡ ¡                  Wraith the Trickster                   ¡ ¡
-	¡ ¡  `I'll go with heaven's advantage and fool's wisdom.` ¡ ¡ 
+	â–¡â– â–¡â–                   Wraith the Trickster                  â–¡â– â–¡â– 
+	â– â–¡â– â–¡ ã€œI'll go with heaven's advantage and fool's wisdom.ã€œ â– â–¡â– â–¡
 ******************************************************************************/
 

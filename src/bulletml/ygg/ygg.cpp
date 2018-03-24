@@ -1,29 +1,29 @@
 /******************************************************************************
-	¢ŠE÷ -yggdrasil-
-		¢ŠE÷ƒ‚ƒWƒ…[ƒ‹ƒ\[ƒXƒtƒ@ƒCƒ‹
+	ä¸–ç•Œæ¨¹ -yggdrasil-
+		ä¸–ç•Œæ¨¹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«
 											Coded by Wraith	in July 14, 2002.
 ******************************************************************************/
 
-//@Tab•‚ğ‚S•¶š‚Éİ’è‚µ‚Ä•\¦‚³‚¹‚Ä‚­‚¾‚³‚¢B
+//ã€€Tabå¹…ã‚’ï¼”æ–‡å­—ã«è¨­å®šã—ã¦è¡¨ç¤ºã•ã›ã¦ãã ã•ã„ã€‚
 
 ///////////////////////////////////////////////////////////////////////////////
 //
-//	¡ ygg.cpp
+//	â–  ygg.cpp
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.cpp
 //
-//	  ŠÖ˜Aƒtƒ@ƒCƒ‹
-//		–{ƒ‚ƒWƒ…[ƒ‹‚Ìƒwƒbƒ_ƒtƒ@ƒCƒ‹
+//	â–¡ é–¢é€£ãƒ•ã‚¡ã‚¤ãƒ«
+//		æœ¬ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒ˜ãƒƒãƒ€ãƒ•ã‚¡ã‚¤ãƒ«
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.h
-//		–{ƒ‚ƒWƒ…[ƒ‹‚Ìƒ`ƒ…[ƒgƒŠƒAƒ‹ƒ\[ƒXƒtƒ@ƒCƒ‹
+//		æœ¬ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg_test.cpp
-//		‘Sƒtƒ@ƒCƒ‹ƒpƒbƒN
+//		å…¨ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ãƒƒã‚¯
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.lzh
 //		http://tricklib.com/cxx/ex/yggdrasil/ygg.zip
 //
-//	  ƒŠƒtƒ@ƒŒƒ“ƒXEƒTƒ|[ƒgƒy[ƒW
+//	â–¡ ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ãƒ»ã‚µãƒãƒ¼ãƒˆãƒšãƒ¼ã‚¸
 //		http://tricklib.com/cxx/ex/yggdrasil/
 //
-//	  ƒ‰ƒCƒZƒ“ƒXî•ñ
+//	â–¡ ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æƒ…å ±
 //		http://tricklib.com/license.htm
 //
 
@@ -39,8 +39,8 @@
 #endif
 
 /******************************************************************************
-	 ¡ ¡                      TrickPalace                        ¡ ¡
-	¡ ¡               http://www.trickpalace.net/               ¡ ¡ 
+	â–¡â– â–¡â–                       TrickPalace                       â–¡â– â–¡â– 
+	â– â–¡â– â–¡              http://www.trickpalace.net/               â– â–¡â– â–¡
 ******************************************************************************/
 
 #define ARRAY_SIZE(X)  		(sizeof(X)/sizeof(X[0]))
@@ -65,8 +65,8 @@ init_stack_dummy[0] = 0;
 //#define AD_LIB_WHILE_PROMOTION(XXX)	while(XXX) XXX = XXX
 
 /******************************************************************************
-	 ¡ ¡                       cppll ML                          ¡ ¡
-	¡ ¡            http://www.trickpalace.net/cppll/            ¡ ¡ 
+	â–¡â– â–¡â–                        cppll ML                         â–¡â– â–¡â– 
+	â– â–¡â– â–¡           http://www.trickpalace.net/cppll/            â– â–¡â– â–¡
 ******************************************************************************/
 
 namespace yggdrasil {
@@ -159,7 +159,7 @@ ygg_string decode_xml(const ygg_string &X) {
 					code = strtol(source.substr(2).c_str(), NULL, 10);
 				}
 #ifdef	__USING_UTF8__
-				char utf8[8] = {0}; // ©w’è‚³‚ê‚Ä‚È‚¢—v‘f‚àƒ[ƒ‚Å‰Šú‰»‚³‚ê‚éB
+				char utf8[8] = {0}; // â†æŒ‡å®šã•ã‚Œã¦ãªã„è¦ç´ ã‚‚ã‚¼ãƒ­ã§åˆæœŸåŒ–ã•ã‚Œã‚‹ã€‚
 				if (code < 0x80) {
 					utf8[0] = (unsigned char)code;
 				} else if (code < 0x800) {
@@ -240,7 +240,7 @@ ygg_string decode_xml(const ygg_string &X) {
 		p == X_text.find("&amp;", p)	&&	(X_replace = "&",	true)	||
 		p == X_text.find("&#", p)		&&	(X_replace =
 							decodex(X_text.substr(p, p_end)),	true)	||
-										(X_replace = X_text.substr(p, p_end +1),	true); // ©‚±‚±AƒoƒO‚Á‚Ä‚È‚¢H
+										(X_replace = X_text.substr(p, p_end +1),	true); // â†ã“ã“ã€ãƒã‚°ã£ã¦ãªã„ï¼Ÿ
 
 		X_text.replace(p, (p_end -p) +1, X_replace);
 		inc = X_replace.length();
@@ -325,22 +325,22 @@ ygg_error_code ygg_utility::check_name(const ygg_string &X) {
 	using namespace ygg_term;
 	using namespace ygg_error_term;
 
-	//	ˆê•¶š–Ú‚Ìƒ`ƒFƒbƒN
+	//	ä¸€æ–‡å­—ç›®ã®ãƒã‚§ãƒƒã‚¯
 	if (ygg_string::npos != ygg_invalid_name_chars_a.find(X.substr(0, 1))) {
 		return ygg_invalid_name_a;
 	}
 
-	//	“ñ•¶š–ÚˆÈ~‚Ìƒ`ƒFƒbƒN
+	//	äºŒæ–‡å­—ç›®ä»¥é™ã®ãƒã‚§ãƒƒã‚¯
 #if	defined(__USING_UNKNOWN__)
 	if (base_encoding::sjis == get_base_encoding()) {
 #endif
 #if	defined(__USING_UNKNOWN__) || defined(__USING_SJIS__)
 		for(ygg_string::const_iterator i = X.begin(); i != X.end(); ++i) {
 			if (0x81 <= (unsigned char)*i && (unsigned char)*i <= 0xFC) {
-			//	‚QƒoƒCƒgƒR[ƒh‚Ì‚PƒoƒCƒg–Ú...
+			//	ï¼’ãƒã‚¤ãƒˆã‚³ãƒ¼ãƒ‰ã®ï¼‘ãƒã‚¤ãƒˆç›®...
 				++i;
 				if (i == X.end() || 0x40 <= (unsigned char)*i && (unsigned char)*i <= 0xFC) {
-				//	‚QƒoƒCƒgƒR[ƒh‚Ì‚QƒoƒCƒg–Ú‚ª–³‚¢A‚à‚µ‚­‚Í‚QƒoƒCƒg–Ú‚ÌƒR[ƒh‚ªæ‚è“¾‚é”ÍˆÍŠO‚Ì’l...
+				//	ï¼’ãƒã‚¤ãƒˆã‚³ãƒ¼ãƒ‰ã®ï¼’ãƒã‚¤ãƒˆç›®ãŒç„¡ã„ã€ã‚‚ã—ãã¯ï¼’ãƒã‚¤ãƒˆç›®ã®ã‚³ãƒ¼ãƒ‰ãŒå–ã‚Šå¾—ã‚‹ç¯„å›²å¤–ã®å€¤...
 					return ygg_broken_char;
 				}
 			} else {
@@ -365,7 +365,7 @@ ygg_error_code ygg_utility::check_name(const ygg_string &X) {
 }
 
 
-//	•¶š—ñ’uŠ· [ Y ]
+//	æ–‡å­—åˆ—ç½®æ› [ ã€† ]
 ygg_string & ygg_utility::ygg_string_replace(
 		ygg_string &body,
 		const ygg_string &X_search, const ygg_string &X_replace) {
@@ -424,14 +424,14 @@ ygg_value & ygg_value::set_double(double X) {
 }
 
 /******************************************************************************
-	 ¡ ¡                          cuppa                          ¡ ¡
-	¡ ¡                  http://www.unittest.org/               ¡ ¡ 
+	â–¡â– â–¡â–                           cuppa                         â–¡â– â–¡â– 
+	â– â–¡â– â–¡                 http://www.unittest.org/               â– â–¡â– â–¡
 ******************************************************************************/
 
 using namespace ygg_utility;
 
 //
-//	¡yggƒm[ƒhƒzƒ‹ƒ_
+//	â– yggãƒãƒ¼ãƒ‰ãƒ›ãƒ«ãƒ€
 //
 ygg_node & ygg_node::self_exile() {
 	for(ygg_iterator i = begin(); i.is_not_end(); ++i) {
@@ -446,26 +446,26 @@ ygg_node & ygg_node::self_exile() {
 
 ygg_node & ygg_node::vanish() {
 	if (body.is_not_null()) {
-	//	‹óƒm[ƒh‚Å‚Í‚È‚¢...
+	//	ç©ºãƒãƒ¼ãƒ‰ã§ã¯ãªã„...
 		for(ygg_iterator i = begin(); i.is_not_end(); ++i) {
 			if (i->is_live()) {
-			//	ƒS[ƒXƒg‚Å‚Í‚È‚¢...
+			//	ã‚´ãƒ¼ã‚¹ãƒˆã§ã¯ãªã„...
 				ygg_node parent = i->get_parent();
 				if (ygg_node_type::empty != parent.get_type()) {
-				//	eƒm[ƒh‚ª‘¶İ‚·‚é...
-					//	eƒm[ƒh‚©‚çâ‰‚·‚é
+				//	è¦ªãƒãƒ¼ãƒ‰ãŒå­˜åœ¨ã™ã‚‹...
+					//	è¦ªãƒãƒ¼ãƒ‰ã‹ã‚‰çµ¶ç¸ã™ã‚‹
 					parent.exile_node(*i);
 				}
 			}
 		}
-		//	ƒnƒ“ƒhƒ‹‚ğè•ú‚·(•K‚¸‚µ‚à‚±‚Ìƒ^ƒCƒ~ƒ“ƒO‚Åƒm[ƒh‚ªÁ‚¦‚Ä‚­‚ê‚é‚Æ‚ÍŒÀ‚ç‚È‚¢)
+		//	ãƒãƒ³ãƒ‰ãƒ«ã‚’æ‰‹æ”¾ã™(å¿…ãšã—ã‚‚ã“ã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ãƒãƒ¼ãƒ‰ãŒæ¶ˆãˆã¦ãã‚Œã‚‹ã¨ã¯é™ã‚‰ãªã„)
 		this->operator=(NULL);
 	}
 	return *this;													//	return
 }
 ygg_string ygg_node::get_path() const {
 	if (body.is_null()) {
-	//	‹óƒm[ƒh...
+	//	ç©ºãƒãƒ¼ãƒ‰...
 		return "/null()";											//	return
 	}
 
@@ -474,15 +474,15 @@ ygg_string ygg_node::get_path() const {
 	ygg_string index;
 	ygg_node parent = body->get_parent();
 	if (ygg_node_type::empty != parent.get_type()) {
-	//	eƒm[ƒh‚ª‘¶İ‚·‚é...
+	//	è¦ªãƒãƒ¼ãƒ‰ãŒå­˜åœ¨ã™ã‚‹...
 
-		//	eƒm[ƒh‚Ü‚Å‚ÌƒpƒX‚ğæ“¾
+		//	è¦ªãƒãƒ¼ãƒ‰ã¾ã§ã®ãƒ‘ã‚¹ã‚’å–å¾—
 		path = parent.get_path();
 		if (ygg_term::path_root != path){
 			path += ygg_term::path_dir;
 		}
 
-		//	ƒCƒ“ƒfƒbƒNƒX‚Ìˆ—
+		//	ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®å‡¦ç†
 		ygg_node X_list = parent[this_path_name];
 		int size = X_list.get_size();
 		assert(0 < size);
@@ -501,7 +501,7 @@ ygg_string ygg_node::get_path() const {
 			assert(0 < index.length());
 		}
 	} else {
-	//	eƒm[ƒh‚ª‘¶İ‚µ‚È‚¢...
+	//	è¦ªãƒãƒ¼ãƒ‰ãŒå­˜åœ¨ã—ãªã„...
 		path = ygg_term::path_root;
 	}
 	path += this_path_name +index;
@@ -509,34 +509,34 @@ ygg_string ygg_node::get_path() const {
 }
 ygg_node & ygg_node::purge() {
 
-	//	œ—ì
+	//	é™¤éœŠ
 	if (!is_live()) {
 		return vanish();											//	return
 	}
 
-	//	ƒm[ƒhí•Ê‚Ìæ“¾
+	//	ãƒãƒ¼ãƒ‰ç¨®åˆ¥ã®å–å¾—
 	ygg_string type = get_type();
 
 	if (type == ygg_node_type::empty ||
 		type == ygg_node_type::comment ||
 		type == ygg_node_type::attribute) {
-	//	Šù‚É‹ó ‚à‚µ‚­‚Í ƒRƒƒ“ƒgƒm[ƒhE‘®«ƒm[ƒh(˜M‚è‚æ‚¤‚ª‚È‚¢‚Ì‚Å•ú’u)
+	//	æ—¢ã«ç©º ã‚‚ã—ãã¯ ã‚³ãƒ¡ãƒ³ãƒˆãƒãƒ¼ãƒ‰ãƒ»å±æ€§ãƒãƒ¼ãƒ‰(å¼„ã‚Šã‚ˆã†ãŒãªã„ã®ã§æ”¾ç½®)
 		return *this;												//	return
 	}
 
 	if (ygg_node_type::text == type) {
-	//	ƒeƒLƒXƒgƒm[ƒh...
+	//	ãƒ†ã‚­ã‚¹ãƒˆãƒãƒ¼ãƒ‰...
 		if (ygg_term::empty != get_value().get_string()) {
 			return *this;											//	return
 		} else {
-		//	“à—e‚ª‹ó‚Ìê‡‚ÍƒoƒjƒbƒVƒ…
+		//	å†…å®¹ãŒç©ºã®å ´åˆã¯ãƒãƒ‹ãƒƒã‚·ãƒ¥
 			return vanish();										//	return
 		}
 	}
 
 	if (type == ygg_node_type::root ||
 		type == ygg_node_type::element) {
-	//	—v‘fƒm[ƒh...
+	//	è¦ç´ ãƒãƒ¼ãƒ‰...
 		ygg_node pre_node;
 		ygg_node children = operator[](ygg_term::node);
 		for(int i = 0; children[i].is_valid(); children[i++].purge()) {
@@ -552,7 +552,7 @@ ygg_node & ygg_node::purge() {
 
 
 	if (ygg_node_type::list == type) {
-	//	ƒm[ƒhƒŠƒXƒg...
+	//	ãƒãƒ¼ãƒ‰ãƒªã‚¹ãƒˆ...
 		ygg_node children = operator[](ygg_term::node);
 		for(int i = 0; children[i].is_valid(); children[i++].purge());
 		switch(get_size()) {
@@ -582,7 +582,7 @@ ygg_node ygg_node::enum_node(const ygg_string &path_where) {
 
 
 //
-//	¡yggƒm[ƒhƒNƒ‰ƒX
+//	â– yggãƒãƒ¼ãƒ‰ã‚¯ãƒ©ã‚¹
 //
 ygg_node ygg_node_body::operator[](const ygg_string &path) {
 	if ("." == path) {
@@ -659,7 +659,7 @@ bool ygg_node_body::assert_other(const ygg_node &) const {
 #endif
 
 //
-//	¡yggƒS[ƒXƒgƒNƒ‰ƒX
+//	â– yggã‚´ãƒ¼ã‚¹ãƒˆã‚¯ãƒ©ã‚¹
 //
 ygg_node ygg_ghost::get_life() const {
 	ygg_node life = parent->operator[](path);
@@ -789,7 +789,7 @@ bool ygg_ghost::assert_other(const ygg_node &X) const {
 
 
 //
-//	¡yggƒRƒƒ“ƒgƒNƒ‰ƒX
+//	â– yggã‚³ãƒ¡ãƒ³ãƒˆã‚¯ãƒ©ã‚¹
 //
 bool ygg_comment::is_live() const {
 	return true;													//	return
@@ -852,7 +852,7 @@ ygg_node ygg_comment::clone() const {
 }
 
 //
-//	¡yggƒeƒLƒXƒgƒNƒ‰ƒX
+//	â– yggãƒ†ã‚­ã‚¹ãƒˆã‚¯ãƒ©ã‚¹
 //
 bool ygg_text::is_live() const {
 	return true;													//	return
@@ -894,7 +894,7 @@ ygg_node ygg_text::clone() const {
 }
 
 //
-//	¡ygg‘®«ƒNƒ‰ƒX
+//	â– yggå±æ€§ã‚¯ãƒ©ã‚¹
 //
 bool ygg_attribute::is_live() const {
 	return true;													//	return
@@ -948,7 +948,7 @@ ygg_node ygg_attribute::clone() const {
 }
 
 //
-//	¡yggƒvƒƒgƒŠƒXƒgƒNƒ‰ƒX
+//	â– yggãƒ—ãƒ­ãƒˆãƒªã‚¹ãƒˆã‚¯ãƒ©ã‚¹
 //
 bool ygg_proto_list::is_live() const {
 	return true;													//	return
@@ -956,7 +956,7 @@ bool ygg_proto_list::is_live() const {
 ygg_string ygg_proto_list::get_value() const {
 	return get_text();												//	return
 }
-//  [ Y ]
+//  [ ã€† ]
 ygg_string ygg_proto_list::get_text() const {
 	ygg_string X_text;
 	for(ygg_list_type::const_iterator i = body.begin(); i != body.end(); ++i) {
@@ -964,7 +964,7 @@ ygg_string ygg_proto_list::get_text() const {
 	}
 	return X_text;													//	return
 }
-//  [ Y ]
+//  [ ã€† ]
 ygg_string ygg_proto_list::get_xml(const ygg_string & indent) const {
 	ygg_string X_text, X_part, X_core;
 	bool gap = false;
@@ -994,7 +994,7 @@ ygg_string ygg_proto_list::get_xml(const ygg_string & indent) const {
 	}
 	return X_text;													//	return
 }
-//  [ Y ]
+//  [ ã€† ]
 ygg_string ygg_proto_list::get_xml_attribute() const {
 	ygg_string X_text;
 	for(ygg_list_type::const_iterator i = body.begin(); i != body.end(); ++i) {
@@ -1002,7 +1002,7 @@ ygg_string ygg_proto_list::get_xml_attribute() const {
 	}
 	return X_text;													//	return
 }
-//  [ Y ]
+//  [ ã€† ]
 ygg_string ygg_proto_list::get_sox(const ygg_string & indent) const {
 	ygg_string X_text;
 	for(ygg_list_type::const_iterator i = body.begin(); i != body.end(); ++i) {
@@ -1018,7 +1018,7 @@ void ygg_proto_list::exile_node(ygg_node X) {
 	exile_child(X);
 }
 
-//	ƒŠƒXƒg‚Ö‚Ìƒm[ƒh’Ç‰Á [ Y ]
+//	ãƒªã‚¹ãƒˆã¸ã®ãƒãƒ¼ãƒ‰è¿½åŠ  [ ã€† ]
 ygg_proto_list * ygg_proto_list::adopt_child(ygg_node X_node) {
 	for(int i = 0; X_node[i].is_valid(); ++i) {
 #ifdef _DEBUG
@@ -1028,7 +1028,7 @@ ygg_proto_list * ygg_proto_list::adopt_child(ygg_node X_node) {
 	}
 	return this;													//	return
 }
-//	ƒŠƒXƒg‚©‚çƒm[ƒh’Ç‰Áíœ [ Y ]
+//	ãƒªã‚¹ãƒˆã‹ã‚‰ãƒãƒ¼ãƒ‰è¿½åŠ å‰Šé™¤ [ ã€† ]
 ygg_proto_list * ygg_proto_list::exile_child(ygg_node X_node) {
 	for(int i = 0; X_node[i].is_valid(); ++i) {
 		body.remove(X_node[i]);
@@ -1049,7 +1049,7 @@ bool ygg_proto_list::assert_other(const ygg_node &X) const {
 #endif
 
 //
-//	¡yggƒŠƒXƒgƒNƒ‰ƒX
+//	â– yggãƒªã‚¹ãƒˆã‚¯ãƒ©ã‚¹
 //
 ygg_string ygg_list::get_type() const {
 	return ygg_node_type::list;										//	return
@@ -1058,7 +1058,7 @@ ygg_string ygg_list::get_name() const {
 //	return ygg_term::list_node;
 	return ygg_term::empty;											//	return
 }
-//  [ Y ]
+//  [ ã€† ]
 ygg_node ygg_list::operator[](const ygg_string &path) {
 	if (ygg_term::path_last_index == path) {
 		return *body.rbegin();
@@ -1080,7 +1080,7 @@ ygg_node ygg_list::operator[](const ygg_string &path) {
 
 	}
 }
-//  [ Y ]
+//  [ ã€† ]
 ygg_node ygg_list::operator[](const unsigned index) {
 	if (index < body.size()) {
 		ygg_list_type::iterator i = body.begin();
@@ -1120,7 +1120,7 @@ ygg_const_reverse_iterator ygg_list::rend() const {
 
 bool ygg_list::match_path(const ygg_string &path) const {
 	assert(false);
-	//assert(("ygg_list::match_path ‚ªŒÄ‚Î‚ê‚é‚æ‚¤‚È‚±‚Æ‚Í‚È‚¢‚Í‚¸B‚Ç‚Á‚©‚ÉƒoƒO‚É‚ª‚ ‚é‚Æv‚í‚ê‚éB", false));
+	//assert(("ygg_list::match_path ãŒå‘¼ã°ã‚Œã‚‹ã‚ˆã†ãªã“ã¨ã¯ãªã„ã¯ãšã€‚ã©ã£ã‹ã«ãƒã‚°ã«ãŒã‚ã‚‹ã¨æ€ã‚ã‚Œã‚‹ã€‚", false));
 	return
 		path == ygg_term::node ||
 		path == ygg_term::list_node;								//	return
@@ -1135,7 +1135,7 @@ ygg_node ygg_list::clone() const {
 }
 
 //
-//	¡yggŠî’êƒNƒ‰ƒX
+//	â– yggåŸºåº•ã‚¯ãƒ©ã‚¹
 //
 ygg_string ygg_root::get_type() const {
 	return ygg_node_type::root;										//	return
@@ -1143,7 +1143,7 @@ ygg_string ygg_root::get_type() const {
 ygg_string ygg_root::get_name() const {
 	return ygg_term::empty;											//	return
 }
-//  [ Y ]
+//  [ ã€† ]
 ygg_node ygg_root::operator[](const ygg_string &path) {
 
 	assert(1 == ygg_term::path_dir.length());
@@ -1314,7 +1314,7 @@ ygg_node ygg_root::clone() const {
 }
 
 //
-//	¡ygg—v‘fƒNƒ‰ƒX
+//	â– yggè¦ç´ ã‚¯ãƒ©ã‚¹
 //
 ygg_string ygg_element::get_type() const {
 	return ygg_node_type::element;									//	return
@@ -1410,12 +1410,12 @@ ygg_node ygg_element::clone() const {
 }
 
 /******************************************************************************
-	 ¡ ¡                 Trick Library 'dagger'                  ¡ ¡
-	¡ ¡              http://tricklib.com/cxx/dagger/            ¡ ¡ 
+	â–¡â– â–¡â–                  Trick Library 'dagger'                 â–¡â– â–¡â– 
+	â– â–¡â– â–¡             http://tricklib.com/cxx/dagger/            â– â–¡â– â–¡
 ******************************************************************************/
 
 //
-//	¡ygg_position
+//	â– ygg_position
 //
 ygg_position & ygg_position::operator+=(const ygg_string &X) {
 	ygg_string X_text = X;
@@ -1431,7 +1431,7 @@ ygg_position & ygg_position::operator+=(const ygg_string &X) {
 
 
 //
-//	¡SAXƒnƒ“ƒhƒ‰[Šî–{ƒNƒ‰ƒX
+//	â– SAXãƒãƒ³ãƒ‰ãƒ©ãƒ¼åŸºæœ¬ã‚¯ãƒ©ã‚¹
 //
 void sax_handler::on_error(ygg_error*) {}
 void sax_handler::start_document(ygg_node) {}
@@ -1443,7 +1443,7 @@ void sax_handler::catch_comment(ygg_node) {}
 
 
 //
-//	 yggƒp[ƒUƒNƒ‰ƒX
+//	â–¡yggãƒ‘ãƒ¼ã‚¶ã‚¯ãƒ©ã‚¹
 //
 ygg_parser * ygg_parser::set_sax_handler(sax_handler *X_sax) {
 	sax = X_sax;
@@ -1460,28 +1460,28 @@ const ygg_error_code ygg_parser::check_name(const ygg_string &type, const ygg_st
 	const int sequence_case = name_error.get_sequence_case();
 
 	if (error_code == ygg_broken_char.get_code()) {
-	//	•s³‚È•¶šƒR[ƒh...
-		raise_error(name_error, "•s³‚È•¶šƒR[ƒh‚ª‚ ‚è‚Ü‚·B");
+	//	ä¸æ­£ãªæ–‡å­—ã‚³ãƒ¼ãƒ‰...
+		raise_error(name_error, "ä¸æ­£ãªæ–‡å­—ã‚³ãƒ¼ãƒ‰ãŒã‚ã‚Šã¾ã™ã€‚");
 	} else if (error_code == ygg_invalid_name.get_code()) {
-	//	•s“KØ‚È–¼‘O...
+	//	ä¸é©åˆ‡ãªåå‰...
 		if (sequence_case == ygg_invalid_name_a.get_sequence_case()) {
-			raise_error(name_error, "•s“KØ‚È" +type +"(" +X +")‚Å‚·B(Ÿ‚Ì•¶š‚Í" +type +"‚Ìˆê•¶š–Ú‚É‚Íg—p‚Å‚«‚Ü‚¹‚ñ '" +ygg_term::ygg_invalid_name_chars_a +"')");
+			raise_error(name_error, "ä¸é©åˆ‡ãª" +type +"(" +X +")ã§ã™ã€‚(æ¬¡ã®æ–‡å­—ã¯" +type +"ã®ä¸€æ–‡å­—ç›®ã«ã¯ä½¿ç”¨ã§ãã¾ã›ã‚“ '" +ygg_term::ygg_invalid_name_chars_a +"')");
 		} else if (sequence_case == ygg_invalid_name_b.get_sequence_case()) {
-			raise_error(name_error, "•s“KØ‚È" +type +"(" +X +")‚Å‚·B(Ÿ‚Ì•¶š‚Í" +type +"‚Æ‚µ‚Äg—p‚Å‚«‚Ü‚¹‚ñ '" +ygg_term::ygg_invalid_name_chars_b +"')");
+			raise_error(name_error, "ä¸é©åˆ‡ãª" +type +"(" +X +")ã§ã™ã€‚(æ¬¡ã®æ–‡å­—ã¯" +type +"ã¨ã—ã¦ä½¿ç”¨ã§ãã¾ã›ã‚“ '" +ygg_term::ygg_invalid_name_chars_b +"')");
 		} else {
-			raise_error(name_error, "•s“KØ‚È" +type +"(" +X +")‚Å‚·B");
+			raise_error(name_error, "ä¸é©åˆ‡ãª" +type +"(" +X +")ã§ã™ã€‚");
 		}
 	} else if (error_code != no_error.get_code()) {
-	//	‚»‚Ì‘¼‚ÌƒGƒ‰[...
+	//	ãã®ä»–ã®ã‚¨ãƒ©ãƒ¼...
 		raise_error(name_error);
 	}
-	//	sax->on_error “à‚ÅƒGƒ‰[‚ªƒNƒŠƒA‚³‚ê‚½ê‡‚É‚Í‹­s‚·‚é
+	//	sax->on_error å†…ã§ã‚¨ãƒ©ãƒ¼ãŒã‚¯ãƒªã‚¢ã•ã‚ŒãŸå ´åˆã«ã¯å¼·è¡Œã™ã‚‹
 	return parse_error;
 }
 
 
 //
-//	¡SOXƒp[ƒUƒNƒ‰ƒX
+//	â– SOXãƒ‘ãƒ¼ã‚¶ã‚¯ãƒ©ã‚¹
 //
 sox_parser & sox_parser::init_root() {
 	root = ygg_root::create();
@@ -1499,20 +1499,20 @@ sox_parser & sox_parser::init_root() {
 	return *this;													//	return
 }
 sox_parser & sox_parser::parse_line(const ygg_string &X_line) {
-	//	‚¢‚Á‚½‚ñ–¢ˆ—ƒoƒbƒtƒ@‚Éc‚Á‚Ä‚é‚â‚Â‚ğˆ—‚·‚é
+	//	ã„ã£ãŸã‚“æœªå‡¦ç†ãƒãƒƒãƒ•ã‚¡ã«æ®‹ã£ã¦ã‚‹ã‚„ã¤ã‚’å‡¦ç†ã™ã‚‹
 	flush();
-	//	‚»‚ÌŒã‚ÍŠÛ“Š‚°
+	//	ãã®å¾Œã¯ä¸¸æŠ•ã’
 	parse(X_line);
 
-	//	Œ»İs‚ÌƒJƒEƒ“ƒg
+	//	ç¾åœ¨è¡Œã®ã‚«ã‚¦ãƒ³ãƒˆ
 	anchor_position.next_line();
 
 	return *this;													//	return
 }
 sox_parser & sox_parser::parse_string(const ygg_string &X_text) {
-	//	‚Æ‚è‚ ‚¦‚¸–¢ˆ—ƒoƒbƒtƒ@‚É’Ç‰Á
+	//	ã¨ã‚Šã‚ãˆãšæœªå‡¦ç†ãƒãƒƒãƒ•ã‚¡ã«è¿½åŠ 
 	unparsed_buffer += X_text;
-	//	s’PˆÊ‚Å‰ğÍˆ—‚É“Š‚°‚é
+	//	è¡Œå˜ä½ã§è§£æå‡¦ç†ã«æŠ•ã’ã‚‹
 	int return_code_length = ygg_term::return_code.length();
 	ygg_string::size_type p;
 	while(ygg_string::npos != (p = unparsed_buffer.find(ygg_term::return_code))) {
@@ -1521,7 +1521,7 @@ sox_parser & sox_parser::parse_string(const ygg_string &X_text) {
 			break;													//	break
 		}
 
-		//	Œ»İs‚ÌƒJƒEƒ“ƒg
+		//	ç¾åœ¨è¡Œã®ã‚«ã‚¦ãƒ³ãƒˆ
 		anchor_position.next_line();
 
 		unparsed_buffer = unparsed_buffer.substr(p +return_code_length);
@@ -1530,7 +1530,7 @@ sox_parser & sox_parser::parse_string(const ygg_string &X_text) {
 	return *this;													//	return
 }
 sox_parser & sox_parser::flush() {
-	//	–¢ˆ—ƒoƒbƒtƒ@‚Éc‚Á‚Ä‚é‚â‚Â‚ª‚ ‚ê‚Îˆ—‚·‚é
+	//	æœªå‡¦ç†ãƒãƒƒãƒ•ã‚¡ã«æ®‹ã£ã¦ã‚‹ã‚„ã¤ãŒã‚ã‚Œã°å‡¦ç†ã™ã‚‹
 	if (ygg_term::empty != unparsed_buffer) {
 		parse(unparsed_buffer);
 		unparsed_buffer = ygg_term::empty;
@@ -1566,12 +1566,12 @@ void sox_parser::parse(const ygg_string &X_text) {
 	ygg_string name;
 	ygg_string value;
 
-	//	Šù‚ÉƒGƒ‰[‚ª”­¶‚µ‚Ä‚¢‚½‚ç’Ç‚¢•Ô‚·
+	//	æ—¢ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¦ã„ãŸã‚‰è¿½ã„è¿”ã™
 	if (parse_error.is_error()) {
 		return;														//	return
 	}
 
-	//	‰üsƒR[ƒh‚ª‚Ü‚¾c‚Á‚Ä‚¢‚ê‚Îæ‚èœ‚­
+	//	æ”¹è¡Œã‚³ãƒ¼ãƒ‰ãŒã¾ã æ®‹ã£ã¦ã„ã‚Œã°å–ã‚Šé™¤ã
 	const char *xi[] = {"\x0a", "\x0d"};
 	for(const char **i = xi; i < ARRAY_END(xi); ++i) {
 		if (ygg_string::npos != (p = X_parse.find(*i))) {
@@ -1579,7 +1579,7 @@ void sox_parser::parse(const ygg_string &X_text) {
 		}
 	}
 
-	//	ƒCƒ“ƒfƒ“ƒg‚ğ”‚¦‚é
+	//	ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’æ•°ãˆã‚‹
 	int indent_count = 0;
 	int indent_length = ygg_term::indent.length();
 	while(ygg_term::indent == X_parse.substr(0, indent_length)) {
@@ -1588,16 +1588,16 @@ void sox_parser::parse(const ygg_string &X_text) {
 		anchor_position.row += indent_length;
 	}
 	if (0 == X_parse.length()) {
-	//	‹ós‚¾‚×...
+	//	ç©ºè¡Œã ã¹...
 		return;														//	return
 	}
 
 	//
-	//	ƒAƒ“ƒJ[ƒCƒ“ƒfƒ“ƒg‚Ì·•ª‚ğŒ³‚Éˆ—‚ğs‚¤
+	//	ã‚¢ãƒ³ã‚«ãƒ¼ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®å·®åˆ†ã‚’å…ƒã«å‡¦ç†ã‚’è¡Œã†
 	//
 
 	while(indent_count <= anchor_indent) {
-		//	eƒGƒŒƒƒ“ƒg‚Ö~‚è‚é
+		//	è¦ªã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã¸é™ã‚Šã‚‹
 		--anchor_indent;
 		assert(root != hot_element);
 		assert(ygg_node_type::empty != hot_element.get_type());
@@ -1628,11 +1628,11 @@ void sox_parser::parse(const ygg_string &X_text) {
 
 
 	//
-	//	ƒm[ƒh‚ÌŒŸo
+	//	ãƒãƒ¼ãƒ‰ã®æ¤œå‡º
 	//
 
 	if (ygg_node_type::comment == last_node.get_type()) {
-		//	ƒRƒƒ“ƒg‚Ì‘±‚«...
+		//	ã‚³ãƒ¡ãƒ³ãƒˆã®ç¶šã...
 		last_node.set_value(
 			last_node.get_value().get_string() +ygg_term::return_code
 			+make_indent(indent_count -(anchor_indent +1))
@@ -1640,14 +1640,14 @@ void sox_parser::parse(const ygg_string &X_text) {
 		return;														//	return
 	}
 
-	// ‚±‚±‚Å[‚·‚¬‚éƒCƒ“ƒfƒ“ƒg‚ÌƒGƒ‰[ŒŸo
+	// ã“ã“ã§æ·±ã™ãã‚‹ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®ã‚¨ãƒ©ãƒ¼æ¤œå‡º
 	if (anchor_indent +1 < indent_count) {
-		raise_error(ygg_error_term::sox_deep_indent, "ƒCƒ“ƒfƒ“ƒg‚ª[‚·‚¬‚Ü‚·B");
+		raise_error(ygg_error_term::sox_deep_indent, "ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆãŒæ·±ã™ãã¾ã™ã€‚");
 		return;														//	return
 	}
 
 	if (ygg_string::npos != (p = X_parse.rfind(ygg_term::comment_trail))) {
-		//	ƒRƒƒ“ƒg
+		//	ã‚³ãƒ¡ãƒ³ãƒˆ
 		catch_event(last_node);
 		value = X_parse.substr(0, p);
 		last_node = ygg_comment::create().set_value(value);
@@ -1672,7 +1672,7 @@ void sox_parser::parse(const ygg_string &X_text) {
 	}
 
 	while(ygg_string::npos != (p = X_parse.find(ygg_term::element_trail))) {
-		//	ƒGƒŒƒƒ“ƒg
+		//	ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆ
 		catch_event(last_node);
 		name = X_parse.substr(0, p);
 
@@ -1703,14 +1703,14 @@ void sox_parser::parse(const ygg_string &X_text) {
 	}
 
 	if (ygg_string::npos != (p = X_parse.find(ygg_term::equal))) {
-		//	ƒAƒgƒŠƒrƒ…[ƒg
+		//	ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆ
 		name = X_parse.substr(0, p);
 
 		if (ygg_parser::check_attribute_name(name).is_error()) {
 			return;
 		} else if (hot_element["@"+name].is_valid()) {
-			raise_error(ygg_error_term::duplication_attribute, name +"‘®«‚ªd•¡‚µ‚Ä‚¢‚Ü‚·B");
-			//	sax->on_error “à‚ÅƒGƒ‰[‚ªƒNƒŠƒA‚³‚ê‚½ê‡‚Í‹­s‚·‚é...
+			raise_error(ygg_error_term::duplication_attribute, name +"å±æ€§ãŒé‡è¤‡ã—ã¦ã„ã¾ã™ã€‚");
+			//	sax->on_error å†…ã§ã‚¨ãƒ©ãƒ¼ãŒã‚¯ãƒªã‚¢ã•ã‚ŒãŸå ´åˆã¯å¼·è¡Œã™ã‚‹...
 			if (parse_error.is_error()) {
 				return;
 			}
@@ -1721,15 +1721,15 @@ void sox_parser::parse(const ygg_string &X_text) {
 //		hot_element.adopt_node(last_node);
 		hot_element.adopt_node(ygg_attribute::create().set_name(name).set_value(value));
 	} else {
-		//	ƒeƒLƒXƒg
+		//	ãƒ†ã‚­ã‚¹ãƒˆ
 		if (ygg_node_type::text != last_node.get_type()) {
-			//	V‹K
+			//	æ–°è¦
 			catch_event(last_node);
 			value = decode_xml(X_parse);
 			last_node = ygg_text::create().set_value(value);
 			hot_element.adopt_node(last_node);
 		} else {
-			//	‘±‚«...
+			//	ç¶šã...
 			last_node.set_value(
 				last_node.get_value().get_string() +ygg_term::return_code
 				+make_indent(indent_count -(anchor_indent +2))
@@ -1751,7 +1751,7 @@ void sox_parser::catch_event(ygg_node node) {
 }
 
 //
-//	¡XMLƒp[ƒUƒNƒ‰ƒX
+//	â– XMLãƒ‘ãƒ¼ã‚¶ã‚¯ãƒ©ã‚¹
 //
 xml_parser & xml_parser::init_root() {
 	root = ygg_root::create();
@@ -1774,10 +1774,10 @@ xml_parser & xml_parser::parse_line(const ygg_string &X_line) {
 	return *this;													//	return
 }
 xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
-	//	‚Æ‚è‚ ‚¦‚¸–¢ˆ—ƒoƒbƒtƒ@‚É’Ç‰Á
+	//	ã¨ã‚Šã‚ãˆãšæœªå‡¦ç†ãƒãƒƒãƒ•ã‚¡ã«è¿½åŠ 
 	unparsed_buffer += X_text;
 
-	//	Šù‚ÉƒGƒ‰[‚ª”­¶‚µ‚Ä‚¢‚½‚ç’Ç‚¢•Ô‚·
+	//	æ—¢ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¦ã„ãŸã‚‰è¿½ã„è¿”ã™
 	if (parse_error.is_error()) {
 		return *this;												//	return
 	}
@@ -1788,31 +1788,31 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 	while (ygg_string::npos != (p = unparsed_buffer.find(ygg_term::element_lead))) {
 
 		if (0 != p) {
-		//	æ‚ÉƒeƒLƒXƒg‚ğˆ—...
+		//	å…ˆã«ãƒ†ã‚­ã‚¹ãƒˆã‚’å‡¦ç†...
 			ygg_string source_text = unparsed_buffer.substr(0, p);
 			value = decode_xml(ygg_utility::xml_trim(source_text));
 			if (ygg_node_type::text == last_node.get_type()) {
-			//	‘±‚«‚ÌƒeƒLƒXƒg...
+			//	ç¶šãã®ãƒ†ã‚­ã‚¹ãƒˆ...
 				last_node.set_value(last_node.get_value().get_string() +value);
 			} else {
-			//	V‹K‚ÌƒeƒLƒXƒg...
+			//	æ–°è¦ã®ãƒ†ã‚­ã‚¹ãƒˆ...
 				anchor_position = hot_position;
 				last_node = ygg_text::create().set_value(value);
 				hot_element.adopt_node(last_node);
 			}
-			//	‘±‚«‚ª‚ ‚é‰Â”\«‚ª‚ ‚é‚Ì‚Å‚±‚Ì’iŠK‚Å‚ÍƒCƒxƒ“ƒg‚ğ”­¶‚³‚¹‚È‚¢B
+			//	ç¶šããŒã‚ã‚‹å¯èƒ½æ€§ãŒã‚ã‚‹ã®ã§ã“ã®æ®µéšã§ã¯ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºç”Ÿã•ã›ãªã„ã€‚
 			//	AD_LIBTIUM(sax).catch_text(last_node);
 			hot_position += source_text;
 			PROMOTION(unparsed_buffer).substr(p), p = 0;
 		}
 
 		if (p == unparsed_buffer.find(ygg_term::comment_lead)) {
-			//	ƒRƒƒ“ƒg...
+			//	ã‚³ãƒ¡ãƒ³ãƒˆ...
 			p_end = unparsed_buffer.find(ygg_term::comment_trail, p);
 			if (ygg_string::npos != p_end) {
-				//	ƒRƒƒ“ƒg‚Ì"•Â‚¶"‚ğ”­Œ©...
+				//	ã‚³ãƒ¡ãƒ³ãƒˆã®"é–‰ã˜"ã‚’ç™ºè¦‹...
 
-				//	’¼‘O‚Ìƒm[ƒh‚ªƒeƒLƒXƒgƒm[ƒh‚È‚çƒeƒLƒXƒgƒCƒxƒ“ƒg‚ğ”­¶B
+				//	ç›´å‰ã®ãƒãƒ¼ãƒ‰ãŒãƒ†ã‚­ã‚¹ãƒˆãƒãƒ¼ãƒ‰ãªã‚‰ãƒ†ã‚­ã‚¹ãƒˆã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºç”Ÿã€‚
 				if (ygg_node_type::text == last_node.get_type()) {
 					AD_LIBTIUM(sax).catch_text(last_node);
 				}
@@ -1827,10 +1827,10 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 				break;												//	break
 			}
 		} else if (p == unparsed_buffer.find(ygg_term::cdata_lead)) {
-			//	CDATAƒeƒLƒXƒg...
+			//	CDATAãƒ†ã‚­ã‚¹ãƒˆ...
 			p_end = unparsed_buffer.find(ygg_term::cdata_trail, p);
 			if (ygg_string::npos != p_end) {
-				//	CDATA‚Ì"•Â‚¶"‚ğ”­Œ©...
+				//	CDATAã®"é–‰ã˜"ã‚’ç™ºè¦‹...
 
 				value = unparsed_buffer.substr(0, p_end).substr(p +ygg_term::cdata_lead.length());
 				if (ygg_node_type::text == last_node.get_type()) {
@@ -1839,7 +1839,7 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 					last_node = ygg_text::create().set_value(value);
 					hot_element.adopt_node(last_node);
 				}
-				//	‘±‚«‚ª‚ ‚é‰Â”\«‚ª‚ ‚é‚Ì‚Å‚±‚Ì’iŠK‚Å‚ÍƒCƒxƒ“ƒg‚ğ”­¶‚³‚¹‚È‚¢B
+				//	ç¶šããŒã‚ã‚‹å¯èƒ½æ€§ãŒã‚ã‚‹ã®ã§ã“ã®æ®µéšã§ã¯ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºç”Ÿã•ã›ãªã„ã€‚
 				//	AD_LIBTIUM(sax).catch_text(last_node);
 				hot_position += unparsed_buffer.substr(0, p_end +ygg_term::cdata_trail.length());
 				PROMOTION(unparsed_buffer).substr(p_end +ygg_term::cdata_trail.length());
@@ -1847,17 +1847,17 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 				break;												//	break
 			}
 		} else {
-			//	ƒGƒŒƒƒ“ƒg...
+			//	ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆ...
 			p_end = unparsed_buffer.find(ygg_term::element_trail, p);
 			if (ygg_string::npos != p_end) {
-				//	ƒGƒŒƒƒ“ƒg‚Ì"•Â‚¶"‚ğ”­Œ©...
+				//	ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã®"é–‰ã˜"ã‚’ç™ºè¦‹...
 
-				//	’¼‘O‚Ìƒm[ƒh‚ªƒeƒLƒXƒgƒm[ƒh‚È‚çƒeƒLƒXƒgƒCƒxƒ“ƒg‚ğ”­¶B
+				//	ç›´å‰ã®ãƒãƒ¼ãƒ‰ãŒãƒ†ã‚­ã‚¹ãƒˆãƒãƒ¼ãƒ‰ãªã‚‰ãƒ†ã‚­ã‚¹ãƒˆã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºç”Ÿã€‚
 				if (ygg_node_type::text == last_node.get_type()) {
 					AD_LIBTIUM(sax).catch_text(last_node);
 				}
 
-				//	ƒ^ƒO“à‚ÌƒeƒLƒXƒg
+				//	ã‚¿ã‚°å†…ã®ãƒ†ã‚­ã‚¹ãƒˆ
 				ygg_string element_string = unparsed_buffer.substr(0, p_end).substr(p +ygg_term::element_lead.length());
 
 				//
@@ -1865,7 +1865,7 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 				hot_position += unparsed_buffer.substr(0, p_end +ygg_term::element_trail.length());
 				PROMOTION(unparsed_buffer).substr(p_end +ygg_term::element_trail.length());
 
-				//	"/" ‚Ìƒ`ƒFƒbƒN
+				//	"/" ã®ãƒã‚§ãƒƒã‚¯
 
 				ygg_string::size_type p_lead_sign = 0;
 				ygg_string::size_type p_trail_sign = element_string.length() -ygg_term::element_sign.length();
@@ -1884,19 +1884,19 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 				if (!lead_sign && !trail_sign &&
 					p_lead_sign == element_string.find("?", p_lead_sign) &&
 					p_trail_sign == element_string.find("?", p_trail_sign)) {
-				//	<?`?> ...
+				//	<?ã€œ?> ...
 #					ifdef __REJECT_PROCESSING_INSTRUCTION__
-						//	“Ç‚İ”ò‚Î‚µ
+						//	èª­ã¿é£›ã°ã—
 						continue;									//	continue
 #					else
-						//	“Áê‚ÈƒGƒŒƒƒ“ƒg‚Æ‚µ‚Äˆ—
+						//	ç‰¹æ®Šãªã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã¨ã—ã¦å‡¦ç†
 						PROMOTION(element_string).substr(0, p_trail_sign);
 						trail_sign = true;
 						is_pi_node = true;
 #					endif
 				}
 
-				//	—v‘f–¼‚Ìæ“¾
+				//	è¦ç´ åã®å–å¾—
 				ygg_string::size_type p_name_end = element_string.find_first_of(ygg_term::white_space);
 				ygg_string element_name = element_string.substr(0, p_name_end);
 				if (ygg_string::npos != p_name_end) {
@@ -1905,7 +1905,7 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 					PROMOTION(element_string) = ygg_term::empty;
 				}
 
-				//	æ“ª‚É"/"‚ª–³‚¯‚ê‚Î
+				//	å…ˆé ­ã«"/"ãŒç„¡ã‘ã‚Œã°
 				if (!lead_sign) {
 #				ifdef __REJECT_PROCESSING_INSTRUCTION__
 					if (ygg_parser::check_element_name(element_name).is_error()) {
@@ -1918,7 +1918,7 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 					hot_element.adopt_node(last_node);
 					hot_element = last_node;
 
-					//	‘®«‚Ìæ“¾...
+					//	å±æ€§ã®å–å¾—...
 					while(true) {
 
 						ygg_string::size_type p_anchor = element_string.find_first_not_of(ygg_term::white_space);
@@ -1932,8 +1932,8 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 						if (ygg_parser::check_attribute_name(attribute_name).is_error()) {
 							return *this;							//	return
 						} else if (hot_element["@"+attribute_name].is_valid()) {
-							raise_error(ygg_error_term::duplication_attribute, attribute_name +"‘®«‚ªd•¡‚µ‚Ä‚¢‚Ü‚·B");
-							//	sax->on_error “à‚ÅƒGƒ‰[‚ªƒNƒŠƒA‚³‚ê‚½ê‡‚Í‹­s‚·‚é...
+							raise_error(ygg_error_term::duplication_attribute, attribute_name +"å±æ€§ãŒé‡è¤‡ã—ã¦ã„ã¾ã™ã€‚");
+							//	sax->on_error å†…ã§ã‚¨ãƒ©ãƒ¼ãŒã‚¯ãƒªã‚¢ã•ã‚ŒãŸå ´åˆã¯å¼·è¡Œã™ã‚‹...
 							if (parse_error.is_error()) {
 								return *this;						//	return
 							}
@@ -1962,27 +1962,27 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 						PROMOTION(element_string).substr(p_value_end +1);
 					}
 
-					//	ƒGƒŒƒƒ“ƒgŠJnƒCƒxƒ“ƒg‚ğ”­¶B
+					//	ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆé–‹å§‹ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºç”Ÿã€‚
 					AD_LIBTIUM(sax).start_element(hot_element);
 				}
 
-				//	æ“ª‚à‚µ‚­‚Í––”ö‚É"/"‚ª—L‚ê‚Î
+				//	å…ˆé ­ã‚‚ã—ãã¯æœ«å°¾ã«"/"ãŒæœ‰ã‚Œã°
 				if (lead_sign || trail_sign) {
 					if (element_name != hot_element.get_name()) {
 						if (root != hot_element) {
-							raise_error(ygg_error_term::unmatch_tags_a, "ŠJnƒ^ƒO<" +hot_element.get_name() +">‚ÆI—¹ƒ^ƒO</" +element_name +">‚ªƒ}ƒbƒ`‚µ‚Ä‚¢‚Ü‚¹‚ñB");
+							raise_error(ygg_error_term::unmatch_tags_a, "é–‹å§‹ã‚¿ã‚°<" +hot_element.get_name() +">ã¨çµ‚äº†ã‚¿ã‚°</" +element_name +">ãŒãƒãƒƒãƒã—ã¦ã„ã¾ã›ã‚“ã€‚");
 						} else {
-							raise_error(ygg_error_term::unmatch_tags_b, "‚¢‚«‚È‚èI—¹ƒ^ƒO<" +element_name +">‚©‚çn‚Ü‚Á‚Ä‚¢‚Ü‚·B");
+							raise_error(ygg_error_term::unmatch_tags_b, "ã„ããªã‚Šçµ‚äº†ã‚¿ã‚°<" +element_name +">ã‹ã‚‰å§‹ã¾ã£ã¦ã„ã¾ã™ã€‚");
 						}
 						if (parse_error.is_error()) {
 							return *this;							//	return
 						}
 					}
 
-					//	end_element “à‚Å vanish ‚³‚ê‚é‚Æe‚ª•ª‚©‚ç‚È‚­‚È‚é‚Ì‚Å‚±‚±‚Åæ“¾B
+					//	end_element å†…ã§ vanish ã•ã‚Œã‚‹ã¨è¦ªãŒåˆ†ã‹ã‚‰ãªããªã‚‹ã®ã§ã“ã“ã§å–å¾—ã€‚
 					ygg_node parent = hot_element.get_parent();
 
-					//	ƒGƒŒƒƒ“ƒgI—¹ƒCƒxƒ“ƒg‚ğ”­¶B
+					//	ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆçµ‚äº†ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºç”Ÿã€‚
 					AD_LIBTIUM(sax).end_element(hot_element);
 
 					hot_element = parent;
@@ -1997,7 +1997,7 @@ xml_parser & xml_parser::parse_string(const ygg_string &X_text) {
 	return *this;													//	return
 }
 xml_parser & xml_parser::flush() {
-	//	xml”Å‚Å‚Í‰½‚à‚µ‚È‚¢B
+	//	xmlç‰ˆã§ã¯ä½•ã‚‚ã—ãªã„ã€‚
 	return *this;													//	return
 }
 xml_parser & xml_parser::end_stream() {
@@ -2016,7 +2016,7 @@ xml_parser & xml_parser::end_stream() {
 }	//	namespace yggdrasil
 
 /******************************************************************************
-	 ¡ ¡                  Wraith the Trickster                   ¡ ¡
-	¡ ¡  `I'll go with heaven's advantage and fool's wisdom.` ¡ ¡ 
+	â–¡â– â–¡â–                   Wraith the Trickster                  â–¡â– â–¡â– 
+	â– â–¡â– â–¡ ã€œI'll go with heaven's advantage and fool's wisdom.ã€œ â– â–¡â– â–¡
 ******************************************************************************/
 

@@ -1,6 +1,6 @@
-/// BulletML �̃p�[�T�E�c���[ by yggdrasil
+/// BulletML のパーサ・ツリー by yggdrasil
 /**
- * Yggdrasil �ɂ�� BulletML �̃p�[�T
+ * Yggdrasil による BulletML のパーサ
  */
 
 #ifndef BULLETMLPARSER_YGG_H_

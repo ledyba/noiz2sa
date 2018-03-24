@@ -1,6 +1,6 @@
-/// BulletML �̃p�[�T�E�c���[ by Xerces
+/// BulletML のパーサ・ツリー by Xerces
 /**
- * Xerces �ɂ�� BulletML �̃p�[�T
+ * Xerces による BulletML のパーサ
  */
 
 #ifndef BULLETMLPARSER_XERCES_H_
