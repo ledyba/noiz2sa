@@ -40,7 +40,7 @@ extern int windowMode;
 extern LayerBit *l1buf, *l2buf;
 extern LayerBit *buf;
 extern LayerBit *lpbuf, *rpbuf;
-const unsigned char* keys;
+extern const unsigned char* keys;
 extern SDL_Joystick *stick;
 extern int buttonReversed;
 extern int brightness;

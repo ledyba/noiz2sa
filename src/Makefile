@@ -31,10 +31,12 @@ OBJS =	$(NAME).o ship.o shot.o frag.o bonus.o \
 	bulletml/tinyxml/tinyxmlparser.cpp \
 	bulletml/tinyxml/tinyxmlerror.cpp
 
+play: $(PROG)
+	cd .. && ./$(PROG) -window
 
 $(PROG): $(OBJS) 
 	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)
-	cp $(PROG) ../
+	mv $(PROG) ../
 
 clean:
 	$(RM) $(PROG) *.o
