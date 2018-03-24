@@ -6,7 +6,7 @@ noiz2saのSDL2への移植版です。OSXで動くのを確認しています。
 
  - ショットとスローのキーが入れ替わっている
  - NumPadの操作は使わないので削除
-
+ - [libbulletml](http://shinh.skr.jp/libbulletml/)をソースコードに含めています
 
 # オリジナルのreadme.txt
 
