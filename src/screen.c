@@ -141,7 +141,7 @@ void initSDL(int isWindow) {
     exit(1);
   }
 
-  if ( (video = SDL_GetWindowSurface(window)) == NULL ) {
+  if ( (video = SDL_CreateRGBSurface(0, SCREEN_WIDTH, SCREEN_HEIGHT, videoBpp, 0, 0, 0, 0)) == NULL ) {
     fprintf(stderr, "Unable to create SDL screen: %s\n", SDL_GetError());
     SDL_Quit();
     exit(1);
@@ -204,7 +204,7 @@ void flipScreen() {
   if ( status == TITLE ) {
     drawTitle();
   }
-  SDL_UpperBlit(video, NULL, SDL_GetWindowSurface(window), &screenRect);
+  SDL_UpperBlit(video, NULL, SDL_GetWindowSurface(window), NULL);
   SDL_UpdateWindowSurface( window );
 }
 
@@ -213,11 +213,11 @@ void clearScreen() {
 }
 
 void clearLPanel() {
-  SDL_FillRect(lpanel, NULL, SDL_MapRGB(lpanel->format, 255, 255, 255));
+  SDL_FillRect(lpanel, NULL, 0);
 }
 
 void clearRPanel() {
-  SDL_FillRect(rpanel, NULL, SDL_MapRGB(rpanel->format, 255, 255, 255));
+  SDL_FillRect(rpanel, NULL, 0);
 }
 
 void smokeScreen() {
@@ -548,14 +548,14 @@ int getButtonState() {
     btn3 = SDL_JoystickGetButton(stick, 2);
     btn4 = SDL_JoystickGetButton(stick, 3);
   }
-  if ( keys[SDL_SCANCODE_Z] == SDL_PRESSED || btn1 || btn4 ) {
+  if ( keys[SDL_SCANCODE_Z] == SDL_PRESSED || btn1 || btn3 ) {
     if ( buttonReversed ) {
       btn |= PAD_BUTTON1;
     } else {
       btn |= PAD_BUTTON2;
     }
   }
-  if ( keys[SDL_SCANCODE_X] == SDL_PRESSED || btn2 || btn3 ) {
+  if ( keys[SDL_SCANCODE_X] == SDL_PRESSED || btn2 || btn4 ) {
     if ( buttonReversed ) {
       btn |= PAD_BUTTON2;
     } else {
