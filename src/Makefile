@@ -34,6 +34,7 @@ OBJS =	$(NAME).o ship.o shot.o frag.o bonus.o \
 
 $(PROG): $(OBJS) 
 	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)
+	cp $(PROG) ../
 
 clean:
 	$(RM) $(PROG) *.o
