@@ -9,7 +9,7 @@
  *
  * @version $Revision: 1.3 $
  */
-#include "SDL.h"
+#include <SDL.h>
 #include "vector.h"
 
 #define SCREEN_WIDTH 640

@@ -9,7 +9,7 @@
  *
  * @version $Revision: 1.1.1.1 $
  */
-#include "SDL.h"
+#include <SDL.h>
 #include "clrtbl.h"
 
 SDL_Color color[256] = {

@@ -13,9 +13,9 @@
 #include "foe.h"
 
 extern "C" {
-#include "SDL.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <SDL.h>
 
 #include "noiz2sa.h"
 #include "screen.h"

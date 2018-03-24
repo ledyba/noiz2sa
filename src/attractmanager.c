@@ -9,9 +9,9 @@
  *
  * @version $Revision: 1.4 $
  */
-#include "SDL.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <SDL.h>
 
 #include "noiz2sa.h"
 #include "screen.h"

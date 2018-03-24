@@ -9,7 +9,7 @@
  *
  * @version $Revision: 1.1.1.1 $
  */
-#include "SDL.h"
+#include <SDL.h>
 
 extern SDL_Color color[256];
 extern Uint8 colorDfs[256];

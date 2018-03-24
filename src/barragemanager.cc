@@ -10,9 +10,9 @@
  * @version $Revision: 1.4 $
  */
 extern "C" {
-#include "SDL.h"
 #include <sys/types.h>
 #include <dirent.h>
+#include <SDL.h>
 #include "noiz2sa.h"
 #include "degutil.h"
 #include "vector.h"
