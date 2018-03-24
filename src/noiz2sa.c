@@ -242,7 +242,7 @@ static void parseArgs(int argc, char *argv[]) {
       i++;
       brightness = (int)atoi(argv[i]);
       if ( brightness < 0 || brightness > 256 ) {
-	brightness = DEFAULT_BRIGHTNESS;
+        brightness = DEFAULT_BRIGHTNESS;
       }
     } else if ( strcmp(argv[i], "-nowait") == 0 ) {
       nowait = 1;
@@ -276,17 +276,18 @@ int main(int argc, char *argv[]) {
   initFirst();
   initTitle();
 
+  fprintf(stderr, "Start main loop:\n");
   while ( !done ) {
     SDL_PollEvent(&event);
     keys = SDL_GetKeyboardState(NULL);
-    if ( keys[SDLK_ESCAPE] == SDL_PRESSED || event.type == SDL_QUIT ) done = 1;
-    if ( keys[SDLK_p] == SDL_PRESSED ) {
+    if ( keys[SDL_SCANCODE_ESCAPE] == SDL_PRESSED || event.type == SDL_QUIT ) done = 1;
+    if ( keys[SDL_SCANCODE_P] == SDL_PRESSED ) {
       if ( !pPrsd ) {
-	if ( status == IN_GAME ) {
-	  status = PAUSE;
-	} else if ( status == PAUSE ) {
-	  status = IN_GAME;
-	}
+        if ( status == IN_GAME ) {
+          status = PAUSE;
+        } else if ( status == PAUSE ) {
+          status = IN_GAME;
+        }
       }
       pPrsd = 1;
     } else {
@@ -299,9 +300,9 @@ int main(int argc, char *argv[]) {
       frame = 1;
       SDL_Delay(prvTickCount+interval-nowTick);
       if ( accframe ) {
-	prvTickCount = SDL_GetTicks();
+        prvTickCount = SDL_GetTicks();
       } else {
-	prvTickCount += interval;
+        prvTickCount += interval;
       }
     } else if ( frame > 5 ) {
       frame = 5;

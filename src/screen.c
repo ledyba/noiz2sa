@@ -34,7 +34,7 @@ LayerBit *l1buf, *l2buf;
 LayerBit *buf;
 LayerBit *lpbuf, *rpbuf;
 static SDL_Rect screenRect, layerRect, layerClearRect;
-static SDL_Rect lpanelRect, rpanelRect, panelClearRect;
+static SDL_Rect lpanelRect, rpanelRect;
 static int pitch, ppitch;
 
 // Handle BMP images.
@@ -64,17 +64,21 @@ static void loadSprites() {
       SDL_Quit();
       exit(1);
     }
-    sprite[i] = SDL_ConvertSurface(img,
-                                   video->format, 0);
-    SDL_SetColorKey(sprite[i], SDL_TRUE, 0);
+    sprite[i] = SDL_ConvertSurface(img, video->format, 0);
+    //SDL_SetColorKey(sprite[i], SDL_RLEACCEL, 0);
+    fprintf(stdout, "Sprite loaded. : %s\n", name);
   }
-  color[0].r = color[0].g = color[0].b = 255;
-  SDL_SetPaletteColors(video->format->palette, color, 0, 1);
+  //color[0].r = color[0].g = color[0].b = 255;
+  //SDL_SetPaletteColors(video->format->palette, color, 0, 1);
+  fprintf(stdout, "All sprites loaded\n");
 }
+
 
 void drawSprite(int n, int x, int y) {
   SDL_Rect pos;
   pos.x = x; pos.y = y;
+  pos.w = sprite[n]->w;
+  pos.h = sprite[n]->h;
   SDL_BlitSurface(sprite[n], NULL, video, &pos);
 }
 
@@ -90,8 +94,6 @@ static void initPalette() {
   SDL_SetPaletteColors(layer->format->palette, color, 0, 256);
   SDL_SetPaletteColors(lpanel->format->palette, color, 0, 256);
   SDL_SetPaletteColors(rpanel->format->palette, color, 0, 256);
-  SDL_SetColorKey(lpanel, SDL_TRUE, SDL_MapRGB(lpanel->format, 255, 255, 255));
-  SDL_SetColorKey(rpanel, SDL_TRUE, SDL_MapRGB(rpanel->format, 255, 255, 255));
 }
 
 static int lyrSize;
@@ -124,18 +126,14 @@ static void makeSmokeBuf() {
 }
 
 void initSDL(int isWindow) {
-  Uint8 videoBpp;
-  Uint32 videoFlags;
-
   if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0 ) {
     fprintf(stderr, "Unable to initialize SDL: %s\n", SDL_GetError());
     exit(1);
   }
   atexit(SDL_Quit);
 
-  videoBpp = BPP;
-  videoFlags = 0;
-  if ( !isWindow ) videoFlags |= SDL_WINDOW_FULLSCREEN;
+  const Uint8 videoBpp = BPP;
+  const Uint32 videoFlags = (!isWindow) ? SDL_WINDOW_FULLSCREEN : 0;
 
   if ( (window = SDL_CreateWindow(CAPTION, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, videoFlags)) == NULL ) {
     fprintf(stderr, "Unable to create SDL window: %s\n", SDL_GetError());
@@ -161,18 +159,12 @@ void initSDL(int isWindow) {
   layerRect.y = (SCREEN_HEIGHT-LAYER_HEIGHT)/2;
   layerRect.w = LAYER_WIDTH;
   layerRect.h = LAYER_HEIGHT;
-  layerClearRect.x = layerClearRect.y = 0;
-  layerClearRect.w = LAYER_WIDTH;
-  layerClearRect.h = LAYER_HEIGHT;
   lpanelRect.x = 0;
   lpanelRect.y = (SCREEN_HEIGHT-PANEL_HEIGHT)/2;
   rpanelRect.x = SCREEN_WIDTH-PANEL_WIDTH;
   rpanelRect.y = (SCREEN_HEIGHT-PANEL_HEIGHT)/2;
   lpanelRect.w = rpanelRect.w = PANEL_WIDTH;
   lpanelRect.h = rpanelRect.h = PANEL_HEIGHT;
-  panelClearRect.x = panelClearRect.y = 0;
-  panelClearRect.w = PANEL_WIDTH;
-  panelClearRect.h = PANEL_HEIGHT;
 
   pitch = layer->pitch/(videoBpp/8);
   buf = (LayerBit*)layer->pixels;
@@ -206,26 +198,26 @@ void blendScreen() {
 }
 
 void flipScreen() {
-  SDL_BlitSurface(layer, NULL, video, &layerRect);
-  SDL_BlitSurface(lpanel, NULL, video, &lpanelRect);
-  SDL_BlitSurface(rpanel, NULL, video, &rpanelRect);
+  SDL_UpperBlit(layer, NULL, video, &layerRect);
+  SDL_UpperBlit(lpanel, NULL, video, &lpanelRect);
+  SDL_UpperBlit(rpanel, NULL, video, &rpanelRect);
   if ( status == TITLE ) {
     drawTitle();
   }
-  SDL_BlitSurface(video, NULL, SDL_GetWindowSurface(window), &screenRect);
+  SDL_UpperBlit(video, NULL, SDL_GetWindowSurface(window), &screenRect);
   SDL_UpdateWindowSurface( window );
 }
 
 void clearScreen() {
-  SDL_FillRect(layer, &layerClearRect, 0);
+  SDL_FillRect(layer, NULL, 0);
 }
 
 void clearLPanel() {
-  SDL_FillRect(lpanel, &panelClearRect, 0);
+  SDL_FillRect(lpanel, NULL, SDL_MapRGB(lpanel->format, 255, 255, 255));
 }
 
 void clearRPanel() {
-  SDL_FillRect(rpanel, &panelClearRect, 0);
+  SDL_FillRect(rpanel, NULL, SDL_MapRGB(rpanel->format, 255, 255, 255));
 }
 
 void smokeScreen() {
@@ -530,16 +522,16 @@ int getPadState() {
     x = SDL_JoystickGetAxis(stick, 0);
     y = SDL_JoystickGetAxis(stick, 1);
   }
-  if ( keys[SDLK_RIGHT] == SDL_PRESSED || keys[SDLK_KP_6] == SDL_PRESSED || x > JOYSTICK_AXIS ) {
+  if ( keys[SDL_SCANCODE_RIGHT] == SDL_PRESSED || x > JOYSTICK_AXIS ) {
     pad |= PAD_RIGHT;
   }
-  if ( keys[SDLK_LEFT] == SDL_PRESSED || keys[SDLK_KP_4] == SDL_PRESSED || x < -JOYSTICK_AXIS ) {
+  if ( keys[SDL_SCANCODE_LEFT] == SDL_PRESSED || x < -JOYSTICK_AXIS ) {
     pad |= PAD_LEFT;
   }
-  if ( keys[SDLK_DOWN] == SDL_PRESSED || keys[SDLK_KP_2] == SDL_PRESSED || y > JOYSTICK_AXIS ) {
+  if ( keys[SDL_SCANCODE_DOWN] == SDL_PRESSED || y > JOYSTICK_AXIS ) {
     pad |= PAD_DOWN;
   }
-  if ( keys[SDLK_UP] == SDL_PRESSED ||  keys[SDLK_KP_8] == SDL_PRESSED || y < -JOYSTICK_AXIS ) {
+  if ( keys[SDL_SCANCODE_UP] == SDL_PRESSED || y < -JOYSTICK_AXIS ) {
     pad |= PAD_UP;
   }
   return pad;
@@ -556,14 +548,14 @@ int getButtonState() {
     btn3 = SDL_JoystickGetButton(stick, 2);
     btn4 = SDL_JoystickGetButton(stick, 3);
   }
-  if ( keys[SDLK_z] == SDL_PRESSED || btn1 || btn4 ) {
+  if ( keys[SDL_SCANCODE_Z] == SDL_PRESSED || btn1 || btn4 ) {
     if ( !buttonReversed ) {
       btn |= PAD_BUTTON1;
     } else {
       btn |= PAD_BUTTON2;
     }
   }
-  if ( keys[SDLK_x] == SDL_PRESSED || btn2 || btn3 ) {
+  if ( keys[SDL_SCANCODE_X] == SDL_PRESSED || btn2 || btn3 ) {
     if ( !buttonReversed ) {
       btn |= PAD_BUTTON2;
     } else {
