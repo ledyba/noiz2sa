@@ -28,6 +28,7 @@
 #include "soundmanager.h"
 #include "attractmanager.h"
 
+static int display = 0;
 static int noSound = 0;
 
 // Initialize and load preference.
@@ -226,7 +227,7 @@ static void draw() {
 static int accframe = 0;
 
 static void usage(char *argv0) {
-  fprintf(stderr, "Usage: %s [-nosound] [-window] [-reverse] [-brightness n] [-nowait] [-accframe]\n", argv0);
+  fprintf(stderr, "Usage: %s [-nosound] [-window] [-display n] [-reverse] [-brightness n] [-nowait] [-accframe]\n", argv0);
 }
 
 static void parseArgs(int argc, char *argv[]) {
@@ -238,6 +239,9 @@ static void parseArgs(int argc, char *argv[]) {
       windowMode = 1;
     } else if ( strcmp(argv[i], "-reverse") == 0 ) {
       buttonReversed = 1;
+    } else if ( (strcmp(argv[i], "-display") == 0) && argv[i+1] ) {
+      i++;
+      display = (int)atoi(argv[i]);
     } else if ( (strcmp(argv[i], "-brightness") == 0) && argv[i+1] ) {
       i++;
       brightness = (int)atoi(argv[i]);
@@ -271,12 +275,12 @@ int main(int argc, char *argv[]) {
   parseArgs(argc, argv);
 
   initDegutil();
-  initSDL(windowMode);
+  initSDL(windowMode, display);
   if ( !noSound ) initSound();
   initFirst();
   initTitle();
 
-  fprintf(stderr, "Start main loop:\n");
+  fprintf(stderr, "Entering main loop.\n");
   while ( !done ) {
     SDL_PollEvent(&event);
     keys = SDL_GetKeyboardState(NULL);

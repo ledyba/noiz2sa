@@ -125,7 +125,7 @@ static void makeSmokeBuf() {
   }
 }
 
-void initSDL(int isWindow) {
+void initSDL(int const isWindow, int const display) {
   if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0 ) {
     fprintf(stderr, "Unable to initialize SDL: %s\n", SDL_GetError());
     exit(1);
@@ -135,7 +135,13 @@ void initSDL(int isWindow) {
   const Uint8 videoBpp = BPP;
   const Uint32 videoFlags = (!isWindow) ? SDL_WINDOW_FULLSCREEN : 0;
 
-  if ( (window = SDL_CreateWindow(CAPTION, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, videoFlags)) == NULL ) {
+  if (display < 0 || display >= SDL_GetNumVideoDisplays()) {
+    fprintf(stderr, "Unable to specify display: there are just %d displays\n", SDL_GetNumVideoDisplays());
+    SDL_Quit();
+    exit(1);
+  }
+
+  if ( (window = SDL_CreateWindow(CAPTION, SDL_WINDOWPOS_CENTERED_DISPLAY(display), SDL_WINDOWPOS_CENTERED_DISPLAY(display), SCREEN_WIDTH, SCREEN_HEIGHT, videoFlags)) == NULL ) {
     fprintf(stderr, "Unable to create SDL window: %s\n", SDL_GetError());
     SDL_Quit();
     exit(1);
