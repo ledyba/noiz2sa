@@ -149,8 +149,7 @@ void initSDL(int const isWindow, int const display) {
       SDL_WINDOWPOS_CENTERED_DISPLAY(display),
       SCREEN_WIDTH,
       SCREEN_HEIGHT,
-      SDL_WINDOW_FULLSCREEN_DESKTOP);
-      SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
+      0);
   } else {
     window = SDL_CreateWindow(
       CAPTION,
@@ -158,7 +157,8 @@ void initSDL(int const isWindow, int const display) {
       SDL_WINDOWPOS_CENTERED_DISPLAY(display),
       SCREEN_WIDTH,
       SCREEN_HEIGHT,
-      0);
+      SDL_WINDOW_FULLSCREEN_DESKTOP);
+      SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
   }
   if (window == NULL) {
     fprintf(stderr, "Unable to create SDL window: %s\n", SDL_GetError());
