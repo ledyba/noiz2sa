@@ -26,14 +26,17 @@
 int windowMode = 0;
 int brightness = DEFAULT_BRIGHTNESS;
 
+static SDL_Rect windowRect;
 static SDL_Window* window;
+static SDL_Renderer* renderer;
+
 static SDL_Surface *video, *layer, *lpanel, *rpanel;
 static LayerBit **smokeBuf;
 static LayerBit *pbuf;
 LayerBit *l1buf, *l2buf;
 LayerBit *buf;
 LayerBit *lpbuf, *rpbuf;
-static SDL_Rect screenRect, layerRect, layerClearRect;
+static SDL_Rect layerRect, layerClearRect;
 static SDL_Rect lpanelRect, rpanelRect;
 static int pitch, ppitch;
 
@@ -130,10 +133,8 @@ void initSDL(int const isWindow, int const display) {
     fprintf(stderr, "Unable to initialize SDL: %s\n", SDL_GetError());
     exit(1);
   }
-  atexit(SDL_Quit);
 
   const Uint8 videoBpp = BPP;
-  const Uint32 videoFlags = (!isWindow) ? SDL_WINDOW_FULLSCREEN : 0;
 
   if (display < 0 || display >= SDL_GetNumVideoDisplays()) {
     fprintf(stderr, "Unable to specify display: there are just %d displays\n", SDL_GetNumVideoDisplays());
@@ -141,19 +142,50 @@ void initSDL(int const isWindow, int const display) {
     exit(1);
   }
 
-  if ( (window = SDL_CreateWindow(CAPTION, SDL_WINDOWPOS_CENTERED_DISPLAY(display), SDL_WINDOWPOS_CENTERED_DISPLAY(display), SCREEN_WIDTH, SCREEN_HEIGHT, videoFlags)) == NULL ) {
+  if (isWindow) {
+    window = SDL_CreateWindow(
+      CAPTION,
+      SDL_WINDOWPOS_CENTERED_DISPLAY(display),
+      SDL_WINDOWPOS_CENTERED_DISPLAY(display),
+      SCREEN_WIDTH,
+      SCREEN_HEIGHT,
+      SDL_WINDOW_FULLSCREEN_DESKTOP);
+      SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
+  } else {
+    window = SDL_CreateWindow(
+      CAPTION,
+      SDL_WINDOWPOS_CENTERED_DISPLAY(display),
+      SDL_WINDOWPOS_CENTERED_DISPLAY(display),
+      SCREEN_WIDTH,
+      SCREEN_HEIGHT,
+      0);
+  }
+  if (window == NULL) {
     fprintf(stderr, "Unable to create SDL window: %s\n", SDL_GetError());
     SDL_Quit();
     exit(1);
   }
 
-  if ( (video = SDL_CreateRGBSurface(0, SCREEN_WIDTH, SCREEN_HEIGHT, videoBpp, 0, 0, 0, 0)) == NULL ) {
+  if ( NULL == (renderer = SDL_CreateRenderer(window, -1, 0))) {
+    fprintf(stderr, "Unable to create SDL renderer: %s\n", SDL_GetError());
+    SDL_Quit();
+    exit(1);
+  }
+
+  if ( NULL == (video = SDL_CreateRGBSurface(0, SCREEN_WIDTH, SCREEN_HEIGHT, videoBpp, 0, 0, 0, 0)) ) {
     fprintf(stderr, "Unable to create SDL screen: %s\n", SDL_GetError());
     SDL_Quit();
     exit(1);
   }
-  screenRect.x = screenRect.y = 0;
-  screenRect.w = SCREEN_WIDTH; screenRect.h = SCREEN_HEIGHT;
+
+  int sw,sh;
+  SDL_GetWindowSize(window, &sw, &sh);
+  const double scale = fmin((double) sw / SCREEN_WIDTH, (double) sh / SCREEN_HEIGHT);
+  windowRect.w = (int) (SCREEN_WIDTH * scale);
+  windowRect.h = (int) (SCREEN_HEIGHT * scale);
+  windowRect.x = (sw - windowRect.w) / 2;
+  windowRect.y = (sh - windowRect.h) / 2;
+
 	SDL_PixelFormat* const pfrm = video->format;
 	if ( NULL == (layer = SDL_CreateRGBSurface(0, LAYER_WIDTH, LAYER_HEIGHT,videoBpp, 0, 0, 0, 0)) 
 	  || NULL == (lpanel = SDL_CreateRGBSurface(0, PANEL_WIDTH, PANEL_HEIGHT, videoBpp, 0, 0, 0, 0))
@@ -192,8 +224,10 @@ void initSDL(int const isWindow, int const display) {
 }
 
 void closeSDL() {
+  SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
   SDL_ShowCursor(SDL_ENABLE);
+  SDL_Quit();
 }
 
 void blendScreen() {
@@ -210,8 +244,11 @@ void flipScreen() {
   if ( status == TITLE ) {
     drawTitle();
   }
-  SDL_UpperBlit(video, NULL, SDL_GetWindowSurface(window), NULL);
-  SDL_UpdateWindowSurface( window );
+  SDL_Texture* const tex = SDL_CreateTextureFromSurface(renderer, video);
+  SDL_RenderClear(renderer);
+  SDL_RenderCopy(renderer, tex, NULL, &windowRect);
+  SDL_RenderPresent(renderer);
+  SDL_DestroyTexture(tex);
 }
 
 void clearScreen() {
