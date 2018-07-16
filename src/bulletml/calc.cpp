@@ -19,6 +19,7 @@ typedef double NumType;
 
 #include <cmath>
 #include <cctype>
+#include <cstring>
 
 #include <vector>
 #include <sstream>

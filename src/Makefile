@@ -9,7 +9,7 @@ CXX    = g++
 PROG        = $(NAME)
 
 DEFAULT_CFLAGS = `sdl2-config --cflags`
-LDFLAGS        = `sdl2-config --libs` -L. -lSDL2_mixer -lstdc++
+LDFLAGS        = `sdl2-config --libs` -L. -lSDL2_mixer -lstdc++ -lm
 
 MORE_CFLAGS = -O3
 
