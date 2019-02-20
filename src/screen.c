@@ -45,7 +45,7 @@ static int pitch, ppitch;
 
 static SDL_Surface *sprite[SPRITE_NUM];
 static char *spriteFile[SPRITE_NUM] = {
-  "title_n.bmp", "title_o.bmp", "title_i.bmp", "title_z.bmp", "title_2.bmp", 
+  "title_n.bmp", "title_o.bmp", "title_i.bmp", "title_z.bmp", "title_2.bmp",
   "title_s.bmp", "title_a.bmp",
 };
 
@@ -121,7 +121,7 @@ static void makeSmokeBuf() {
       my = y + sctbl[(y*8)&(DIV-1)]/128;
       if ( mx < 0 || mx >= LAYER_WIDTH || my < 0 || my >= LAYER_HEIGHT ) {
         smokeBuf[x+y*pitch] = &(pbuf[pitch*LAYER_HEIGHT]);
-      } else {        
+      } else {
         smokeBuf[x+y*pitch] = &(pbuf[mx+my*pitch]);
       }
     }
@@ -187,7 +187,7 @@ void initSDL(int const isWindow, int const display) {
   windowRect.y = (sh - windowRect.h) / 2;
 
 	SDL_PixelFormat* const pfrm = video->format;
-	if ( NULL == (layer = SDL_CreateRGBSurface(0, LAYER_WIDTH, LAYER_HEIGHT,videoBpp, 0, 0, 0, 0)) 
+	if ( NULL == (layer = SDL_CreateRGBSurface(0, LAYER_WIDTH, LAYER_HEIGHT,videoBpp, 0, 0, 0, 0))
 	  || NULL == (lpanel = SDL_CreateRGBSurface(0, PANEL_WIDTH, PANEL_HEIGHT, videoBpp, 0, 0, 0, 0))
 	  || NULL == (rpanel = SDL_CreateRGBSurface(0, PANEL_WIDTH, PANEL_HEIGHT, videoBpp, 0, 0, 0, 0))) {
       fprintf(stderr, "Couldn't create surface: %s\n", SDL_GetError());
@@ -356,7 +356,7 @@ void drawLine(int x1, int y1, int x2, int y2, LayerBit color, int width, LayerBi
   }
 }
 
-void drawThickLine(int x1, int y1, int x2, int y2, 
+void drawThickLine(int x1, int y1, int x2, int y2,
                    LayerBit color1, LayerBit color2, int width) {
   int lx, ly, ax, ay, x, y, ptr, i, j;
   int xMax, yMax;
@@ -451,7 +451,7 @@ void drawThickLine(int x1, int y1, int x2, int y2,
   }
 }
 
-void drawBox(int x, int y, int width, int height, 
+void drawBox(int x, int y, int width, int height,
              LayerBit color1, LayerBit color2, LayerBit *buf) {
   int i, j;
   LayerBit cl;
@@ -487,7 +487,7 @@ void drawBox(int x, int y, int width, int height,
   memset(&(buf[ptr]), color2, width);
 }
 
-void drawBoxPanel(int x, int y, int width, int height, 
+void drawBoxPanel(int x, int y, int width, int height,
                   LayerBit color1, LayerBit color2, LayerBit *buf) {
   int i, j;
   LayerBit cl;
@@ -599,7 +599,7 @@ int getButtonState() {
   int btn = 0;
   int btn1 = 0, btn2 = 0;
   if ( stick != NULL ) {
-    btn1 = SDL_JoystickGetButton(stick, 2);
+    btn1 = SDL_JoystickGetButton(stick, 3);
     btn2 = SDL_JoystickGetButton(stick, 0);
   }
   if ( keys[SDL_SCANCODE_Z] == SDL_PRESSED || btn1 ) {
