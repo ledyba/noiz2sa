@@ -161,7 +161,7 @@ void BulletMLRunnerImpl::doWait(int frame) {
 void BulletMLRunnerImpl::changes() {
 	int now = runner_->getTurn();
 
-    if (changeDir_.get() != 0) {
+	if (changeDir_.get() != 0) {
 		if (changeDir_->isLast(now)) {
 			runner_->doChangeDirection(changeDir_->getLast());
 			delete auto_ptr_release(changeDir_);
@@ -169,9 +169,9 @@ void BulletMLRunnerImpl::changes() {
 		else {
 			runner_->doChangeDirection(changeDir_->getValue(now));
 		}
-    }
+	}
 
-    if (changeSpeed_.get() != 0) {
+	if (changeSpeed_.get() != 0) {
 		if (changeSpeed_->isLast(now)) {
 			runner_->doChangeSpeed(changeSpeed_->getLast());
 			delete auto_ptr_release(changeSpeed_);
@@ -179,9 +179,9 @@ void BulletMLRunnerImpl::changes() {
 		else {
 			runner_->doChangeSpeed(changeSpeed_->getValue(now));
 		}
-    }
+	}
 
-    if (accelx_.get() != 0) {
+	if (accelx_.get() != 0) {
 		if (accelx_->isLast(now)) {
 			runner_->doAccelX(accelx_->getLast());
 			delete auto_ptr_release(accelx_);
@@ -189,9 +189,9 @@ void BulletMLRunnerImpl::changes() {
 		else {
 			runner_->doAccelX(accelx_->getValue(now));
 		}
-    }
+	}
 
-    if (accely_.get() != 0) {
+	if (accely_.get() != 0) {
 		if (accely_->isLast(now)) {
 			runner_->doAccelY(accely_->getLast());
 			delete auto_ptr_release(accely_);
@@ -199,7 +199,7 @@ void BulletMLRunnerImpl::changes() {
 		else {
 			runner_->doAccelY(accely_->getValue(now));
 		}
-    }
+	}
 }
 
 void BulletMLRunnerImpl::runSub() {
@@ -424,7 +424,7 @@ void BulletMLRunnerImpl::runChangeSpeed() {
 		spd = getNumberContents(spdNode) * (double)term
 			+ runner_->getBulletSpeed();
 	}
-	
+
 
 	calcChangeSpeed(spd, term);
 
@@ -561,5 +561,3 @@ BulletMLRunnerImpl::Parameters* BulletMLRunnerImpl::getParameters() {
 
 	return para;
 }
-
-	

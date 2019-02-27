@@ -67,11 +67,11 @@ protected:
 
 class BulletMLRunnerImpl {
 public:
-    explicit BulletMLRunnerImpl(BulletMLState* state, BulletMLRunner* runner);
-    virtual ~BulletMLRunnerImpl();
+	explicit BulletMLRunnerImpl(BulletMLState* state, BulletMLRunner* runner);
+	virtual ~BulletMLRunnerImpl();
 
 	/// 実行する
-    void run();
+	void run();
 
 public:
 	/// 実行が終了しているかどうか
@@ -80,17 +80,17 @@ public:
 	}
 
 public:
-    /// 弾の方向変更を登録し、自前で各ターン変更する
+	/// 弾の方向変更を登録し、自前で各ターン変更する
 	virtual void calcChangeDirection(double direction, int term, bool seq);
-    /// 弾の速度変更を登録し、自前で各ターン変更する
+	/// 弾の速度変更を登録し、自前で各ターン変更する
 	virtual void calcChangeSpeed(double speed, int term);
-    /// 弾の加速を登録し、自前で各ターン変更する
+	/// 弾の加速を登録し、自前で各ターン変更する
 	/**
 	 * @todo horizontal, vertical の type は未実装です。
 	 */
 	virtual void calcAccelX(double vertical, int term,
 							BulletMLNode::Type type);
-    /// 弾の加速を登録し、自前で各ターン変更する
+	/// 弾の加速を登録し、自前で各ターン変更する
 	/**
 	 * @todo horizontal, vertical の type は未実装です。
 	 */
@@ -103,18 +103,18 @@ protected:
 	 * これらのオーバーライドも考えてください。
 	 */
 	//@{
-    void runBullet();
-    void runAction();
-    void runFire();
-    void runWait();
-    void runRepeat();
-    void runBulletRef();
-    void runActionRef();
-    void runFireRef();
-    void runChangeDirection();
-    void runChangeSpeed();
-    void runAccel();
-    void runVanish();
+	void runBullet();
+	void runAction();
+	void runFire();
+	void runWait();
+	void runRepeat();
+	void runBulletRef();
+	void runActionRef();
+	void runFireRef();
+	void runChangeDirection();
+	void runChangeSpeed();
+	void runAccel();
+	void runVanish();
 	//@}
 
 private:
@@ -125,35 +125,35 @@ private:
 	bool isTurnEnd();
 	void doWait(int frame);
 
-    void setDirection();
-    void setSpeed();
+	void setDirection();
+	void setSpeed();
 
-    void shotInit() {
+	void shotInit() {
 		spd_.disValidate();
 		dir_.disValidate();
-    }
+	}
 
-    double getNumberContents(const BulletMLNode* node);
-    std::vector<double>* getParameters();
-    double getSpeed(BulletMLNode* spdNode);
+	double getNumberContents(const BulletMLNode* node);
+	std::vector<double>* getParameters();
+	double getSpeed(BulletMLNode* spdNode);
 	double getDirection(BulletMLNode* dirNode, bool prevChange = true);
 
 private:
 private:
-    std::auto_ptr<LinearFunc<int, double> > changeDir_;
-    std::auto_ptr<LinearFunc<int, double> > changeSpeed_;
-    std::auto_ptr<LinearFunc<int, double> > accelx_;
-    std::auto_ptr<LinearFunc<int, double> > accely_;
+	std::auto_ptr<LinearFunc<int, double> > changeDir_;
+	std::auto_ptr<LinearFunc<int, double> > changeSpeed_;
+	std::auto_ptr<LinearFunc<int, double> > accelx_;
+	std::auto_ptr<LinearFunc<int, double> > accely_;
 
 protected:
-    Validatable<double> spd_, dir_, prevSpd_, prevDir_;
+	Validatable<double> spd_, dir_, prevSpd_, prevDir_;
 
-    typedef BulletMLParameter Parameters;
-    boost::shared_ptr<Parameters> parameters_;
+	typedef BulletMLParameter Parameters;
+	boost::shared_ptr<Parameters> parameters_;
 
 protected:
-    BulletMLParser* bulletml_;
-    BulletMLNode* act_;
+	BulletMLParser* bulletml_;
+	BulletMLNode* act_;
 	std::vector<BulletMLNode*> node_;
 	int actTurn_;
 	std::vector<int> actTurns_;
@@ -168,13 +168,13 @@ protected:
 		int ite, end;
 		BulletMLNode* act;
 	};
-    typedef std::stack<RepeatElem*> RepeatStack;
-    RepeatStack repeatStack_;
-    typedef std::stack<std::pair<BulletMLNode*,
+	typedef std::stack<RepeatElem*> RepeatStack;
+	RepeatStack repeatStack_;
+	typedef std::stack<std::pair<BulletMLNode*,
 								 boost::shared_ptr<Parameters> > > RefStack;
-    RefStack refStack_;
+	RefStack refStack_;
 
-    typedef void (BulletMLRunnerImpl::*Method)();
+	typedef void (BulletMLRunnerImpl::*Method)();
 	static Method commandMap_[BulletMLNode::nameSize];
 
 protected:
